@@ -118,7 +118,6 @@ ul {
 	left: 20px;
 	cursor: pointer;
 	line-height: 1em;
-	padding: 10px;
 	background-color: $dark;
 	z-index: 100;
 	@media (min-width: $screen-sm-min) {
@@ -128,14 +127,11 @@ ul {
 }
 
 .content-panel {
-	background-color: $medium;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	padding-left: 30px;
 	padding-right: 30px;
 	margin-top: 20px;
-	box-shadow: 0px 0px 0px 0px, 0px 6px 12px rgba(0, 0, 0, 0.2);
-	border-bottom: 5px solid $light-blue;
 }
 
 #my-menu {
@@ -230,8 +226,8 @@ ul {
 	padding: 0px;
 
 	@media (min-width: $screen-sm-min) {
-		width: 700px;
-		max-width:700px;
+		width: 1170px;
+		max-width:1170px;
 	}
 
 	.header {
@@ -251,13 +247,13 @@ ul {
 		font-size: 22px;
 	}
 
-	.content-panel:nth-of-type(1) {
-		border-bottom: 10px solid $light-blue;
-	}
+	// .content-panel:nth-of-type(1) {
+	// 	border-bottom: 10px solid $light-blue;
+	// }
 
 	.author-header {
 		font-family: 'Montserrat', sans-serif;
-		color: $light-blue;
+		color: $darker;
 		margin-top: 0px;
 		padding-top: 15px;
 		font-size: 30px;
@@ -412,19 +408,19 @@ ul {
 	}
 
 	#search-input {
-		position:relative;
+		position: relative;
 		width: 100%;
-		padding:6px 15px 6px 30px;
+		padding: 6px 15px 6px 30px;
 		margin: 2px;
 		margin-top: 50px;
 
 		color:$dark;
 		background-color:$white;
 
-		border:1px solid #adc5cf;
-		border-radius:15px;
-		-moz-border-radius:15px;
-		-webkit-border-radius:15px;
+		border: 1px solid white;
+		border-radius: 15px;
+		-moz-border-radius: 15px;
+		-webkit-border-radius: 15px;
 	}
 
 	#search-input:focus {
@@ -826,27 +822,27 @@ ul {
 		color: $red;
 	}
 
-	@media (min-width: $screen-sm-min) {
-		width: 90%;
-		margin-left: 5%;
-	}
+	// @media (min-width: $screen-sm-min) {
+	// 	width: 90%;
+	// 	margin-left: 5%;
+	// }
 
-	@media (min-width: $screen-md-min) {
-		width: 80%;
-		margin-left: 10%;
-	}
+	// @media (min-width: $screen-md-min) {
+	// 	width: 80%;
+	// 	margin-left: 10%;
+	// }
 
-	@media (min-width: $screen-lg-min) {
-		width: 70%;
-		margin-left: 15%;
-	}
+	// @media (min-width: $screen-lg-min) {
+	// 	width: 70%;
+	// 	margin-left: 15%;
+	// }
 
-	div {
-		color: $light-medium;
-		text-align: center;
-		margin-top: 20px;
-		margin-bottom: 20px;
-	}
+	// div {
+	// 	color: $light-medium;
+	// 	text-align: center;
+	// 	margin-top: 20px;
+	// 	margin-bottom: 20px;
+	// }
 }
 
 .btn-categories {

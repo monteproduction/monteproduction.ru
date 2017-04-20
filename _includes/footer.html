@@ -1,14 +1,33 @@
-<div class="footer clearfix">
-  <div class="col-md-6">
-    {{ site.footer_left }}
-  </div>
-  <div class="col-md-6">
-    {{ site.footer_right }}
-  </div>
-</div>
+  	<footer class="footer clearfix">
+      <div class="container">
+				<ul class="bot_links">
+					<li ><a href="{{ site.baseurl }}/confidencial.php">Стоимость услуг / Политика конфиденциальности</a></li>
+				</ul>
+			</div>
+			<div class="container">
+				<div class="col-md-12 col-sm-12">
+					Все фото и видео материалы принадлежат &copy; Monte Production и могут быть использованы только для демонстрационных целей.
+					<br>
+				</div>
+			</div>
+			<div class="container">
+        <div class="col-md-6">
+          {{ site.footer_left }}
+        </div>
+        <div class="col-md-6">
+          {{ site.footer_right }}
+        </div>
+			</div>
+		</footer>
 
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<!--<script src="js/jquery-2.2.4.min.js"></script>-->
+<!--<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--<script src="js/bootstrap.js"></script>-->
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script src="js/common.js"></script>
+
 <script src="{{ site.baseurl }}/js/jquery.mmenu.min.all.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>

@@ -1,14 +1,35 @@
-<nav id="my-menu">
+<!--<nav id="my-menu">
   <div>
-    <p>{{ site.title }}</p>
 
     <ul class="pages">
-      <li><a href="{{ site.baseurl }}/"><i class="fa fa-home"></i> Home</a></li>
-      <li><a href="{{ site.baseurl }}/posts/"><i class="fa fa-archive"></i> All Posts</a></li>
-      <li><a href="{{ site.baseurl }}/search/"><i class="fa fa-search"></i> Search</a></li>
+      <li><a href="{{ site.baseurl }}/"><i class="fa fa-home"></i> Главная</a></li>
+      <li><a href="{{ site.baseurl }}/posts/"><i class="fa fa-archive"></i> Здесь будут направления</a></li>
+      <li><a href="{{ site.baseurl }}/search/"><i class="fa fa-search"></i> Поиск</a></li>
     </ul>
 
     {% include social_links.html %}
   </div>
 </nav>
-<div class="menu-button" href="#menu"><i class="fa fa-bars"></i></div>
+
+<div class="menu-button" href="#menu"><i class="fa fa-bars"></i></div>-->
+
+<header>
+  <div class="container">
+    <nav class="menu_main">
+      <div class="dir_logo_prod hidden-xs hidden-sm"> </div>
+      <div class="hidden-xs  	hidden-sm 	col-md-12 					col-lg-12  					fix-top" >&nbsp;</div>
+      <a class=" 	col-xs-12 	col-sm-12 	col-md-2    col-md-offset-2 col-lg-2 col-lg-offset-1 	" href="/about.php">О Нас</a>
+      <div class=" 	col-xs-12 	col-sm-12 	col-md-4					col-lg-6 					logo"   >
+        {% if page.layout != 'mainpage' %}
+        <a href="{{ site.url }}">
+        {% endif %}
+          <img src="{{ site.baseurl }}/images/Monte_LOGO_WHITE.svg" class=""  style="width: 275px;" alt="{{ site.title }}">
+        {% if page.layout != 'mainpage' %}
+        </a>
+        {% endif %}
+      </div>
+      <a class=" 	col-xs-12 	col-sm-12 	col-md-2 					col-lg-2" href="/contacts.php">Контакты</a>
+      <div class="dir_logo_wedd hidden-xs hidden-sm"> </div>
+    </nav>
+  </div>
+</header>
