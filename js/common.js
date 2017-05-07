@@ -14,21 +14,16 @@ $(function(){
 
 	
     $('figure').hover(
-        
+            
         function() {
-            $( this ).find('figcaption').unwrap();
 
             $( this ).addClass( 'zoom-effect' );
             $( this ).find( '.figurecircle' ).addClass( 'scale-effect' );    
-            $( this ).find( 'p' ).addClass( 'hover-opacity' );    
 
         }, function() {
 
-            $( this ).find('figcaption').wrap('<div class="layer"></div>');
             $( this ).removeClass( 'zoom-effect' );
-        
             $( this ).find( '.figurecircle' ).removeClass( 'scale-effect' );     
-            $( this ).find( 'p' ).removeClass( 'hover-opacity' );    
         });
 
 	return false;		

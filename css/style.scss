@@ -226,8 +226,7 @@ ul {
 	padding: 0px;
 
 	@media (min-width: $screen-sm-min) {
-		width: 1170px;
-		max-width:1170px;
+    	width: 100%;
 	}
 
 	.header {
@@ -817,6 +816,10 @@ ul {
 .footer {
 	width: 100%;
 	margin-left: 0%;
+	z-index: 9;
+    background-color: black;
+    text-align: center;
+    width: 100%;
 
 	.fa-heart {
 		color: $red;

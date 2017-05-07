@@ -1,20 +1,20 @@
-  	<footer class="footer clearfix">
+  	<footer>
       <div class="container">
 				<ul class="bot_links">
-					<li ><a href="{{ site.baseurl }}/confidencial.php">Стоимость услуг / Политика конфиденциальности</a></li>
+					<li ><a href="{{ site.baseurl }}/confidencial/">Стоимость услуг / Политика конфиденциальности</a></li>
 				</ul>
 			</div>
 			<div class="container">
-				<div class="col-md-12 col-sm-12">
-					Все фото и видео материалы принадлежат &copy; Monte Production и могут быть использованы только для демонстрационных целей.
+				<p class="">
+					Все фото и видео материалы принадлежат &copy; Monte Production {{ site.time | date: '%Y' }} и могут быть использованы только для демонстрационных целей.
 					<br>
-				</div>
+				</p>
 			</div>
 			<div class="container">
-        <div class="col-md-6">
+        <div class="klimov col-md-6">
           {{ site.footer_left }}
         </div>
-        <div class="col-md-6">
+        <div class="klimov col-md-6">
           {{ site.footer_right }}
         </div>
 			</div>
@@ -25,8 +25,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!--<script src="js/bootstrap.js"></script>-->
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<script src="js/owl.carousel.js"></script>
-<script src="js/common.js"></script>
+<script src="{{ site.baseurl }}/js/owl.carousel.js"></script>
+<script src="{{ site.baseurl }}/js/fotorama.js"></script>
+<script src="{{ site.baseurl }}/js/common.js"></script>
 
 <script src="{{ site.baseurl }}/js/jquery.mmenu.min.all.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>

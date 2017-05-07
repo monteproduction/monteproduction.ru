@@ -200,7 +200,6 @@ h1 {
     padding: 28px 0 32px;
     text-align: center;
 }
-
 p strong {
   font-family: helveticaneuecyrultralight, sans-serif;
   font-weight: normal;
@@ -216,7 +215,9 @@ header {
     position: fixed;
 }
 footer {
-    bottom: 0px;
+    bottom: 0;
+    float: left;
+    height: 160px;
 }
 .logo {
     margin-top: -3px;
@@ -279,30 +280,8 @@ nav.reduced {
     padding: 0.5rem 0;
 }
 .main_directions {
-    list-style: outside none none;
-    margin: 0;
-    overflow: hidden;
-    text-align: center;
-    padding: 0;
-    width: 100%;    
-	content: " ";
-    display: table;
 }
-figure {
-    display: table-cell;
-	margin: 0 0;
-    vertical-align: middle;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-    transition-delay: 0ms;
-    transition-duration: 0.45s;
-    transition-property: transform, opacity, -webkit-transform;
-    transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
-    white-space: normal;	
-    width: 33.3333vw;
-    will-change: transform, opacity;
-    z-index: 1;    
+figure {   
 }
 .dir_logo_prod {
     background: rgba(0, 0, 0, 0) url("../images/LOGO_MEDIA.svg") no-repeat scroll center center / contain ;
@@ -313,7 +292,7 @@ figure {
     width: 70px;
 }
 .dir_logo_wedd {
-    background: rgba(0, 0, 0, 0) url("../images/LOGO_WEDD.svg") no-repeat scroll center center / contain ;
+    background: rgba(0, 0, 0, 0) url("../images/LOGO_E_and_W.svg") no-repeat scroll center center / contain ;
     height: 70px;
     right: 35px;
     position: absolute;
@@ -353,45 +332,21 @@ figure {
 .mobile_directions h2 {
     padding: 20% 0 0;
 }
-@media screen and (max-width: 69.5em) {
-	.grid figure {
-		/* 
-		width: 50%;
 
-        */
-	}	
-
-	.grid figure figcaption {
-		/* 
-		font-size: 90%;
-
-        */
-	}
-}
-
-
-@media screen and (max-width: 41.5em) {
-
-	.grid figure {
-		/* 
-        width: 100%;
-        */
-	}
-}
 
 #video > .dir_photo {    
 	background-image: url("../images/video_production_new.jpg");
 }
-#wedd > .dir_photo {
-	background-image: url("../images/wedding_new.jpg");
-}
 #event > .dir_photo {
 	background-image: url("../images/event_new.jpg");
+}
+#wedd > .dir_photo {
+	background-image: url("../images/wedding_new.jpg");
 }
 .dir_photo {
     display: block;
     height: 100vh;
-	background-position: 32% 100px;
+	background-position: 32%;
 	-webkit-background-size: cover;
 	background-size: cover;
 }
@@ -404,11 +359,87 @@ figure {
 	background-color: -o-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .8));
 	background-color: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .8));    
 }
+.grid figure {
+    background: #3085a3 none repeat scroll 0 0;
+    cursor: pointer;
+    float: left;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
 
+.grid figure img {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	max-width: 100%;
+	opacity: 0.8;
+}
+
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+	pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.grid figure figcaption > a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.grid figure figcaption h2 {
+    color: black;
+    font-family: helveticaneuecyrroman,sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    letter-spacing: 2px;
+    line-height: 24vw;
+    height: 24vw;
+    top: calc(50% - 12vw);
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.grid figure h2 {
+	word-spacing: -0.15em;
+	font-weight: 300;
+}
+
+.grid figure h2 span {
+	font-weight: 800;
+}
+
+.grid figure h2,
+.grid figure p {
+	margin: 0;
+}
+
+.grid figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
 /*---------------*/
 /***** Lily *****/
 /*---------------*/
-figure.effect-lily img {
+figure.effect-lily img {    
     height: 100vh;
     left: auto;
     margin: auto;
@@ -439,7 +470,7 @@ figure.effect-lily figcaption {
     margin: 0 auto;
     padding: 0;
     position: absolute;
-    top: calc(50% - 9vw);
+    top: calc(50% - 12vw);
 
     transform: scale3d(5, 5, 1);
     transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
@@ -533,127 +564,93 @@ figure.effect-lily:hover p {
 	transform: scale3d(1.1, 1.1, 1.0);
   }
 } 
-/*---------------*/
-/***** Sadie *****/
-/*---------------*/
+/*-----------------*/
+/***** Steve *****/
+/*-----------------*/
 
+figure.effect-steve {
+	z-index: auto;
+	overflow: hidden;
+	background: #000;
+}
 
-figure.effect-sadie figcaption::before {
+figure.effect-steve:before {
 	position: absolute;
 	top: 0;
 	left: 0;
+	z-index: -1;
 	width: 100%;
 	height: 100%;
-	background: -webkit-linear-gradient(top, rgba(72,76,97,0) 0%, #0070C0 75%);
-	background: linear-gradient(to bottom, rgba(72,76,97,0) 0%, #0070C0 75%);
+	background: #000;
 	content: '';
+	-webkit-transition: opacity 0.35s;
+	transition: opacity 0.35s;
+}
+
+figure.effect-steve:before {
+	box-shadow: 0 3px 30px rgba(0,0,0,0.8);
 	opacity: 0;
-	-webkit-transform: translate3d(0,50%,0);
-	transform: translate3d(0,50%,0);
 }
 
-figure.effect-sadie h2 {
-	position: absolute;
-	top: 50%;
-	left: 0;
-	width: 100%;
-	color: #484c61;
-	-webkit-transition: -webkit-transform 0.35s, color 0.35s;
-	transition: transform 0.35s, color 0.35s;
-	-webkit-transform: translate3d(0,-50%,0);
-	transform: translate3d(0,-50%,0);
+figure.effect-steve figcaption {
+	z-index: 1;
 }
 
-figure.effect-sadie figcaption::before,
-figure.effect-sadie p {
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s;
-}
-
-figure.effect-sadie p {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	padding: 2em;
-	width: 100%;
-	opacity: 0;
-	-webkit-transform: translate3d(0,10px,0);
-	transform: translate3d(0,10px,0);
-}
-
-figure.effect-sadie:hover h2 {
-	color: #fff;
-	-webkit-transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
-	transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
-}
-
-figure.effect-sadie:hover figcaption::before ,
-figure.effect-sadie:hover p {
+figure.effect-steve img {
 	opacity: 1;
-	-webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
-}
-/*---------------*/
-/***** Chico *****/
-/*---------------*/
-
-figure.effect-chico {
-	background-color: #F715BC;
-}
-figure.effect-chico img {
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s;
-	-webkit-transform: scale(1.12);
-	transform: scale(1.12);
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: perspective(1000px) translate3d(0,0,0);
+	transform: perspective(1000px) translate3d(0,0,0);
+	-webkit-background-size: cover;
+	background-size: cover;
+    background-position: 32% 100px;
 }
 
-figure.effect-chico:hover img {
-	opacity: 0.5;
-	-webkit-transform: scale(1);
-	transform: scale(1);
+figure.effect-steve h2,
+figure.effect-steve p {
+    opacity: 0;
 }
 
-figure.effect-chico figcaption {
-	padding: 3em;
+figure.effect-steve h2 {
+	position: relative;
+	margin-top: 2em;
+	padding: 0.25em;
 }
 
-figure.effect-chico figcaption::before {
-	position: absolute;
-	top: 30px;
-	right: 30px;
-	bottom: 30px;
-	left: 30px;
-	border: 1px solid #fff;
-	content: '';
-	-webkit-transform: scale(1.1);
-	transform: scale(1.1);
+figure.effect-steve h2:before {
+	box-shadow: 0 1px 10px rgba(0,0,0,0.5);
 }
 
-figure.effect-chico figcaption::before,
-figure.effect-chico p {
+figure.effect-steve p {
+	margin-top: 1em;
+	padding: 0.5em;
+	font-weight: 800;
 	opacity: 0;
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale3d(0.9,0.9,1);
+	transform: scale3d(0.9,0.9,1);
 }
 
-figure.effect-chico h2 {
-	padding: 20% 0 20px 0;
-}
-
-figure.effect-chico p {
-	margin: 0 auto;
-	max-width: 200px;
-	-webkit-transform: scale(1.5);
-	transform: scale(1.5);
-}
-
-figure.effect-chico:hover figcaption::before,
-figure.effect-chico:hover p {
+figure.effect-steve:hover:before {
 	opacity: 1;
-	-webkit-transform: scale(1);
-	transform: scale(1);
 }
 
+figure.effect-steve:hover img {
+	-webkit-transform: perspective(1000px) translate3d(0,0,21px);
+	transform: perspective(1000px) translate3d(0,0,21px);
+}
+
+figure.effect-steve:hover h2 {
+	opacity: 1;
+}
+
+figure.effect-steve:hover p {
+	opacity: 1;
+	-webkit-transform: scale3d(1,1,1);
+	transform: scale3d(1,1,1);
+}
 
 /*---------------*/
 /****** Owl ******/
@@ -802,7 +799,7 @@ opacity: 1;
     padding: 15px;
     position: fixed;
     text-align: justify;
-    top: 40%;
+    top: 50%;
     transform: translate(-50%, -50%);
     transition: opacity 0.5s ease 0s, top 0.5s ease 0s;
     visibility: hidden;
@@ -1127,10 +1124,8 @@ left: -20px;
     font-family: "PT Sans",arial;
     font-size: 20px;
     font-weight: lighter;
-    height: 45vh; 
-    min-height: 390px;
     letter-spacing: 1px;
-    padding: 125px 0 0;
+    padding: 25px 0 0;
     text-align: center;
 }
 .monte_map {
@@ -1192,11 +1187,18 @@ address div {
     color: white;
 }
 footer p {
-	color: #777;
+    color: #777;
     font-size: 15px;
-    margin: 25px auto;
+    margin: 4px auto 0;
     max-width: 760px;
     text-align: center;
+}
+footer ul {
+    line-height: 35px;
+}
+footer .klimov {
+    color: white;
+    margin: 4px auto 20px;
 }
 .bot_links {
     color: gray;
@@ -1233,8 +1235,14 @@ footer p {
 .t-align_center {
     text-align: center;
 }
-.t-cell_33 {
-    width: 33.3333vw;
+.t-cell_1 {
+    width: 33%;
+}
+.t-cell_2 {
+    width: 34%;
+}
+.t-cell_3 {
+    width: 33%;;
 }
 .t-cell {
     display: table-cell;
