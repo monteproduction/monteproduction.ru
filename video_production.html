@@ -61,10 +61,10 @@ permalink: /video_production/
 <section class="prod_content">
   <div class="container">
   {% for post in site.posts %}
+    {% if forloop.first %}
+      <ul class="prod_services about-block col-md-12 col-sm-12">
+    {% endif %}
     {% if post.direction == 'production' %}
-      {% if forloop.first %}
-        <ul class="prod_services about-block col-md-12 col-sm-12">
-      {% endif %}
       {% if post.sectype == 'content' %}
         <li>{{ post.title }}</li>
         {{ post.content }}
@@ -77,9 +77,9 @@ permalink: /video_production/
           <div class="container">
             <ul class="prod_services about-block col-md-12 col-sm-12">
       {% endif %}
-      {% if forloop.last %}
-        </ul>
-      {% endif %}
+    {% endif %}
+    {% if forloop.last %}
+      </ul>
     {% endif %}
   {% endfor %}
 

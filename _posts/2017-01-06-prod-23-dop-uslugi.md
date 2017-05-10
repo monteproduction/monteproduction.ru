@@ -4,7 +4,7 @@ date:       2017-01-06 12:15:18
 direction:  production
 sectype:    galery
 
-title: Дополнительные услуги 
+title:
 ---
 
 <section class="prod_content">

@@ -60,10 +60,10 @@ permalink: /event-agency/
 <section class="">
   <div class="container">
   {% for post in site.posts %}
+    {% if forloop.first %}
+      <ul class="event_services about-block col-md-12 col-sm-12">
+    {% endif %}
     {% if post.direction == 'event' %}
-      {% if forloop.first %}
-        <ul class="event_services about-block col-md-12 col-sm-12">
-      {% endif %}
       {% if post.sectype == 'content' %}
         <li>{{ post.title }}</li>
         {{ post.content }}
@@ -76,9 +76,9 @@ permalink: /event-agency/
           <div class="container">
             <ul class="event_services about-block col-md-12 col-sm-12">
       {% endif %}
-      {% if forloop.last %}
-        </ul>
-      {% endif %}
+    {% endif %}
+    {% if forloop.last %}
+      </ul>
     {% endif %}
   {% endfor %}
 

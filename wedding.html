@@ -63,10 +63,10 @@ permalink: /wedding/
 <section class="wedd_content">
   <div class="container">
   {% for post in site.posts %}
+	{% if forloop.first %}
+	<ul class="wedd_services about-block col-md-12 col-sm-12">
+	{% endif %}
     {% if post.direction == 'wedd' %}
-      {% if forloop.first %}
-        <ul class="wedd_services about-block col-md-12 col-sm-12">
-      {% endif %}
       {% if post.sectype == 'content' %}
         <li>{{ post.title }}</li>
         {{ post.content }}
@@ -79,10 +79,10 @@ permalink: /wedding/
           <div class="container">
             <ul class="wedd_services about-block col-md-12 col-sm-12">
       {% endif %}
-      {% if forloop.last %}
-        </ul>
-      {% endif %}
-    {% endif %}
+	{% endif %}
+	{% if forloop.last %}
+	</ul>
+	{% endif %}
   {% endfor %}
 
 
@@ -90,7 +90,7 @@ permalink: /wedding/
 </section>
       
 
-<section class="">
+<section class="wedd_content">
   <div class="container">
 	<div class="contact-social	col-xs-12 col-sm-12 	col-md-6 col-md-offset-3 	col-lg-6 col-lg-offset-3">
 		Все новости и обновления в социальных сетях!

@@ -216,7 +216,7 @@ header {
 footer {
     bottom: 0;
     float: left;
-    height: 160px;
+    min-height: 160px;
 }
 .logo {
     margin-top: -3px;
@@ -307,16 +307,21 @@ figure {
     width: 15vh;
 }
 
-.mobile_directions {
-    padding: 118px 0 0 0;
-}
-.mobile_directions ul li {
+.mobile_directions {    
+    padding: 0;
     text-align: center;
+    vertical-align: middle;
 }
 .mobile_directions a {
-    color: white;
-    height: 29vh;
-    width: 100%;
+    color: inherit;
+    display: block;
+    height: 180px!important;
+    margin: 0;
+    overflow: hidden;
+    padding: 10px;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    white-space: nowrap;
 }
 .mobile_directions a:hover{
     opacity: 1;
@@ -330,16 +335,21 @@ figure {
     width: 500px;
 }
 .mobile_directions h2 {
-    padding: 20% 0 0;
+    background: rgba(5, 2, 2, 0.5) none repeat scroll 0 0;
+    color: white;
+    height: 100%;
+    line-height: 160px;
 }
 
-
+#video > .mob_photo,
 #video > .dir_photo {    
 	background-image: url("../images/video_production_new.jpg");
 }
+#event > .mob_photo,
 #event > .dir_photo {
 	background-image: url("../images/event_new.jpg");
 }
+#wedd > .mob_photo,
 #wedd > .dir_photo {
 	background-image: url("../images/wedding_new.jpg");
 }
@@ -1254,4 +1264,7 @@ footer .klimov {
 /* menu fix */
 .fix {
     height: 100px;
+}
+.fixmob {
+    height: 19px;
 }
