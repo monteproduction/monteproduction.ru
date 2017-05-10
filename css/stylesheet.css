@@ -186,10 +186,6 @@ h1 {
     text-align: center;
     text-transform: uppercase;
 }
-
-/*.menu-button i {
-
-}*/
 .container {
 }
 .container h2 {
@@ -213,6 +209,9 @@ header, footer {
 }
 header {
     position: fixed;
+}
+.page-content {
+    min-height: 100vh;
 }
 footer {
     bottom: 0;
@@ -280,6 +279,7 @@ nav.reduced {
     padding: 0.5rem 0;
 }
 .main_directions {
+    overflow: hidden;
 }
 figure {   
 }
