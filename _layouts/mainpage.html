@@ -5,11 +5,19 @@
 
     <body>
 
-    {% include header.html %}
-        
-		{{ content }}	
+    {% include sidebar.html %}
 
-    {% include footer.html %}
+    <div class="wrap">
+
+        {% include header.html %}
+            
+        {{ content }}	
+
+        {% include footer.html %}
+
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
     </body>
 </html>

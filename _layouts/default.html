@@ -4,19 +4,23 @@
     {% include head.html %}
 
     <body>
+      {% include sidebar.html %}
+    <div class="wrap">
+      {% include header.html %}
 
-    {% include header.html %}
-
-    <div class="fix"></div>
-    <div class="page-content">
-      <div class="wrap">
-        <div class="container">
-      {{ content }}
+      <div class="fix"></div>
+      <div class="page-content">
+        <div class="wrap">
+          <div class="container">
+        {{ content }}
+          </div>
         </div>
       </div>
+
+      {% include footer.html %}
     </div>
 
-    {% include footer.html %}
-
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    
     </body>
 </html>

@@ -292,21 +292,20 @@ nav.reduced {
 }
 figure {   
 }
+.dir_logo_prod, 
+.dir_logo_wedd {
+    top: 10px;
+    width: 70px;
+    height: 70px;
+    position: absolute;    
+}
 .dir_logo_prod {
     background: rgba(0, 0, 0, 0) url("../images/LOGO_MEDIA.svg") no-repeat scroll center center / contain ;
-    height: 70px;
-    left: 35px;
-    position: absolute;
-    top: 2vh;
-    width: 70px;
+    left: 95px;
 }
 .dir_logo_wedd {
     background: rgba(0, 0, 0, 0) url("../images/LOGO_E_and_W.svg") no-repeat scroll center center / contain ;
-    height: 70px;
-    right: 35px;
-    position: absolute;
-    top: 2vh;
-    width: 70px;
+    right: 95px;
 }
 .dir_logo{
     bottom: 5vh;
