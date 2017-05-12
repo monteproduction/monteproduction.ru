@@ -14,7 +14,7 @@ permalink: /404.html
       </div>
 
       <div class="error-text">
-        <a href="{{ site.baseurl }}/">На главную</a>
+        <a href="{{ site.baseurl }}/">На главную</a> | 
         <a href="{{ site.baseurl }}/search/">Поиск</a>
       </div>
 
@@ -38,7 +38,7 @@ permalink: /404.html
          {% else %}
           {{ post.excerpt | strip_html | truncatewords:30 }}
          {% endif %}
-        <a href="{{ site.baseurl }}{{ post.url }}">Continue Reading</a>
+        <a href="{{ site.baseurl }}{{ post.url }}">Дальше...</a>
       </div>
     {% endfor %}
   </div>
