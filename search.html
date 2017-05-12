@@ -9,9 +9,9 @@ permalink: /search/
     <h1 class="header author-header">Поиск</h1>
 
     <div id="search-container">
-      <input type="text" id="search-input" placeholder="Например: Школьные праздники, Анимация...">
+      <input type="text" id="search-input" placeholder="Например: Праздники, Анимация...">
       <div class="col-md-12 content-panel articles">
-        <ul id="results-container"><small>Здесь будет результат поиска</small></ul>
+        <ul id="results-container"></ul>
       </div>
     </div>
 
@@ -42,7 +42,7 @@ permalink: /search/
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('results-container'),
     dataSource: '{{ site.baseurl }}/search.json',
-    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}<\/a><\/li>',
+    searchResultTemplate: '<li><a href="{url}">{title}<\/a><\/li>',
     noResultsText: 'Нет результатов',
     limit: 10,
     fuzzy: true,

@@ -131,7 +131,7 @@ ul {
 	padding-bottom: 20px;
 	padding-left: 30px;
 	padding-right: 30px;
-	margin-top: 20px;
+	background-color: $light-medium;
 }
 
 #my-menu {
@@ -309,9 +309,12 @@ ul {
 
 			padding: 0px;
 
-			li {
-				margin-bottom: 20px;
+			li {    
+				border-top: 1px solid #f3f3ef;
+				display: block;
+				transition: background-color 0.4s ease 0s;
 				font-size: 24px;
+    			height: 50px;
 
 				a:hover {
 					color: $light-medium;
@@ -321,11 +324,14 @@ ul {
 					font-size: 14px;
 					margin-top: -10px;
 					padding-top: 0px;
-					color: $light-medium;
+					color: $darker;
 				}
 
 			}
 
+			li:hover {
+				background-color: $darker; 
+			}
 			li:nth-last-of-type(1) {
 
 				small {
@@ -336,8 +342,14 @@ ul {
 		}
 
 		a, a:active {
-			color: $white;
+			color: $darker;
+			display: block;
+			font-size: 18px;
+			height: 100%;
+			text-transform: none;    
+			line-height: 50px;
 			white-space: nowrap;
+			width: 100%;
 		}
 
 		a:hover {
@@ -410,16 +422,12 @@ ul {
 		position: relative;
 		width: 100%;
 		padding: 6px 15px 6px 30px;
-		margin: 2px;
-		margin-top: 50px;
+		margin: 50px 0 0;
 
 		color:$dark;
 		background-color:$white;
 
 		border: medium none;
-		border-radius: 15px;
-		-moz-border-radius: 15px;
-		-webkit-border-radius: 15px;
 	}
 
 	#search-input:focus {
@@ -427,11 +435,10 @@ ul {
   }
 
 	.content-panel {
-		padding-left: 10px;
-		padding-right: 10px;
+    background-color: #fff;
+		padding: 0px;
 		@media (min-width: $screen-md-min) {
-			padding-left: 30px;
-			padding-right: 30px;
+			padding: 0px;
 		}
 	}
 }
@@ -593,7 +600,7 @@ ul {
 			blockquote {
 				position: relative;
 				width: 100%;
-		    margin-left: -15px;
+		   	 	margin-left: -15px;
 				padding-right: 10px;
 				background-color: $darker;
 				color: white;
