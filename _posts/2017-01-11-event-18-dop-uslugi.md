@@ -3,6 +3,7 @@ layout:     post
 date:       2017-01-11 12:19:18
 direction:  event
 sectype:    content
+permalink:  /:categories/:title.html
 
 title:        
 annotatio:  

@@ -44,7 +44,7 @@ permalink: /search/
     resultsContainer: document.getElementById('results-container'),
     dataSource: '{{ site.baseurl }}/search.json',
     searchResultTemplate: '<li><a href="{url}">{title}<\/a><\/li>',
-    noResultsText: 'Нет результатов',
+    noResultsText: '<i>Нет результатов</i>',
     limit: 10,
     fuzzy: true,
   })

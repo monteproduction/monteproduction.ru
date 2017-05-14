@@ -32,9 +32,9 @@ $red:            #C04848;
 $orange:         #F07241;
 
 /* Responsive sizes */
-$screen-sm-min: 768px;
-$screen-md-min: 992px;
-$screen-lg-min: 1200px;
+$screen-sm-min: 1300px;
+$screen-md-min: 1600px;
+$screen-lg-min: 1900px;
 
 /* Globals */
 
@@ -131,7 +131,7 @@ ul {
 	padding-bottom: 20px;
 	padding-left: 30px;
 	padding-right: 30px;
-	background-color: $light-medium;
+	background-color: white;
 }
 
 #my-menu {
@@ -339,6 +339,11 @@ ul {
 				}
 
 			}
+
+			i {
+				line-height: 60px;
+			}
+
 		}
 
 		a, a:active {

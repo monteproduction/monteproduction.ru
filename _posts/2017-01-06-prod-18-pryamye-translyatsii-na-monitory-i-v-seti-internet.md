@@ -3,6 +3,7 @@ layout:     post
 date:       2017-01-06 12:20:18
 direction:  production
 sectype:    content
+permalink:  /:categories/:title.html
 
 title:      Прямые трансляции на мониторы и в сети Интернет
 annotatio:  Компания Monte организует прямые трансляции на мониторы и в сети интернет. Мы способны вывести любые значимые события
