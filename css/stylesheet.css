@@ -333,7 +333,7 @@ nav.reduced {
     opacity: 1;
 }
 
-.layer-on-top{
+.layer-on-top {
     background-color: black;
     float: left;
     height: 29vh;
@@ -345,19 +345,29 @@ nav.reduced {
     color: white;
     height: 100%;
     line-height: 160px;
+    font-size: 1.8rem;
 }
 
 #video > .mob_photo,
 #video > .dir_photo {    
 	background-image: url("../images/video_production_new.jpg");
 }
+#video > .mob_photo {
+    background-position: 40% 45%;
+}
 #event > .mob_photo,
 #event > .dir_photo {
 	background-image: url("../images/event_new.jpg");
 }
+#event > .mob_photo {
+    background-position: 41% 5%;
+}
 #wedd > .mob_photo,
 #wedd > .dir_photo {
 	background-image: url("../images/wedding_new.jpg");
+}
+#wedd > .mob_photo {
+    background-position: 64% 58%;
 }
 .dir_photo {
     display: block;
@@ -365,15 +375,6 @@ nav.reduced {
 	background-position: 32%;
 	-webkit-background-size: cover;
 	background-size: cover;
-}
-.mobile_directions .dir_photo {
-    background-position: 19% 0;
-    background-size: cover;
-    display: block;    
-    height: 29vh;
-	background-color: -webkit-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .8));
-	background-color: -o-linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .8));
-	background-color: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .8));    
 }
 .grid figure {
     background: #3085a3 none repeat scroll 0 0;
