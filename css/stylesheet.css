@@ -195,8 +195,6 @@ h1 {
     text-align: center;
     text-transform: uppercase;
 }
-.container {
-}
 .container h2 {
     font-family: "PT Sans",arial;
     font-size: 28px;
@@ -242,6 +240,7 @@ footer {
     text-align: center;
 }
 .menu_main a, .links a {
+    opacity: 0.88;
     color: #fff;
     font-family: "PT Sans",sans-serif;
     font-size: 16px;
@@ -254,13 +253,14 @@ footer {
     text-transform: uppercase;
     vertical-align: middle;
 }
+.menu_main a:hover, .links a:hover {
+    opacity: 1;
+}
 .menu_main ul {
 	left: -50%;
 }
 .menu_main li {
 	float: left;
-}
-.menu_main > li {
 }
 .menu_main ul {
     height: 0;
@@ -289,8 +289,6 @@ nav.reduced {
 }
 .main_directions {
     overflow: hidden;
-}
-figure {   
 }
 .dir_logo_prod, 
 .dir_logo_wedd {
@@ -745,8 +743,6 @@ figure.effect-steve:hover p {
    display: block;
    margin: 0 auto;
 }
-.same_galery .item {
-}
 .prod_galery figcaption, .event_galery figcaption, .wedd_galery figcaption, .about_galery figcaption {
     background-color: black;
     font-size: 22px;
@@ -1087,7 +1083,6 @@ left: -20px;
 .event_galery #fotoblock-2 .item, .event_galery #fotoblock-3 .item, .event_galery #fotoblock-4 .item {
     height: 515px !important;
 }
-.about_galery item {}
 
 
 .about .devide-block {
@@ -1170,11 +1165,6 @@ address div {
 }
 .contact-phone, .contact-mail, .contact-location {
     font-size: 22px;
-}
-.contact-phone {
-
-}
-.contact-phone span {
 }
 .contact-social {
     color: black;
