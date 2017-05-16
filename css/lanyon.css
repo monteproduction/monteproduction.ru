@@ -221,7 +221,7 @@ a.sidebar-nav-item:focus {
     display: block;
     padding: 0.25rem 0.75rem;
     position: absolute;
-    top: 42px;
+    top: 44px;
     z-index: 10;
     left: .8rem;
 }
@@ -252,7 +252,6 @@ a.sidebar-nav-item:focus {
 #sidebar-checkbox:focus ~ .sidebar-toggle,
 #sidebar-checkbox:checked ~ .sidebar-toggle {
   color: #fff;
-  background-color: #555;
 }
 
 .sidebar-toggle:active:before,
