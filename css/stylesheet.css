@@ -437,6 +437,10 @@ nav.reduced {
     text-transform: uppercase;
     vertical-align: middle;
 }
+.dir_logo_wedd_figure, dir_logo_prod_figure {
+    top: calc(50% - 12vw);
+    margin: 0 auto;
+}
 
 .grid figure h2 {
 	word-spacing: -0.15em;
@@ -493,7 +497,7 @@ figure.effect-lily figcaption {
     top: calc(50% - 12vw);
 
     transform: scale3d(5, 5, 1);
-    transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+    transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1) 0s, background-color 0.35s, background-image 0.35s;
 }
 figure.effect-lily h2,
 figure.effect-lily p {
@@ -542,6 +546,7 @@ figure.effect-lily:hover p {
 .scale-effect {
     transform: scale3d(1, 1, 1);
     background: rgba(255, 255, 255, 0.6) none repeat scroll 0 0;
+    transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1) 0s, background-color 0.35s, background-image 0.35s;
 }
 .hover-opacity {
     opacity: 1;

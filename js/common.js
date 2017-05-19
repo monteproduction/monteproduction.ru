@@ -1,3 +1,45 @@
+$(document).ready(function() {
+    
+    setTimeout(function(){
+        $("#depreload .wrapper").animate({ opacity: 1 });
+    }, 400);
+
+    setTimeout(function(){
+        $("#depreload .logo").animate({ opacity: 1 });
+    }, 800);
+
+    var canvas  = $("#depreload .line")[0],
+        context = canvas.getContext("2d");
+
+    context.beginPath();
+    context.arc(280, 280, 260, Math.PI * 1.5, Math.PI * 1.6);
+    context.strokeStyle = '#fff';
+    context.lineWidth = 5;
+    context.stroke();
+
+    var loader = $("body").DEPreLoad({
+        OnStep: function(percent) {
+            console.log(percent + '%');
+
+            $("#depreload .line").animate({ opacity: 1 });
+            $("#depreload .perc").text(percent + "%");
+
+            if (percent > 5) {
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.beginPath();
+                context.arc(280, 280, 260, Math.PI * 1.5, Math.PI * (1.5 + percent / 50), false);
+                context.stroke();
+            }
+        },
+        OnComplete: function() {
+            console.log('Everything loaded!');
+
+            $("#depreload .perc").text("done");
+            $("#depreload .loading").animate({ opacity: 0 });
+        }
+    });
+});
+
 $(function(){
     // $('.main_directions').hover(
     //     function() {
