@@ -2,7 +2,9 @@
     var items = new Array(), current = 0;
 
     /* Callbacks */
-    var OnStep     = function(Percent) { };
+    var OnStep     = function(Percent) {
+        find(.depreload).css('opacity: 0')
+     };
     var OnComplete = function()        { };
 
     // Get all images from css and <img> tag
