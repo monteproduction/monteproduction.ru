@@ -1275,3 +1275,23 @@ footer .klimov {
 .fixmob {
     height: 19px;
 }
+#preload-close {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: white;
+    background-image: url("../images/close.png");
+    background-origin: padding-box;
+    background-position-x: 0;
+    background-position-y: 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    height: 80px;
+    width: 80px;
+    position: fixed;
+    right: 50px;
+    top: 50px;
+    z-index: 99;
+}
+.sublevel {
+    margin-left: 5px;
+}

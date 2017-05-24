@@ -9,8 +9,16 @@
   </div>
 
   <nav class="sidebar-nav">
-    <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/">Направления</a>
+    <a class="sidebar-nav-item" href="{{ site.baseurl }}/">Направления</a>
+    <a class="sidebar-nav-item sublevel" href="{{ site.baseurl }}/video_production/">Production</a>
+    <a class="sidebar-nav-item sublevel" href="{{ site.baseurl }}/event-agency/">Event&Wedding</a>
+    <a class="sidebar-nav-item sublevel" href="{{ site.baseurl }}/wedding/">TheMaker</a>
+    <a class="sidebar-nav-item" href="{{ site.baseurl }}/contacts/">Контакты</a>
+    <a class="sidebar-nav-item" href="{{ site.baseurl }}/about/">О нас</a>
+    <a class="sidebar-nav-item" href="{{ site.baseurl }}/confidencial/">Стоимость услуг</a>
 
+
+<!--
     {% assign pages_list = site.pages | sort:"url" %}
     {% for node in pages_list %}
       {% if node.title != null %}
@@ -18,14 +26,12 @@
           <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
         {% endif %}
       {% endif %}
-    {% endfor %}
+    {% endfor %}-->
 
   </nav>
 
   <div class="sidebar-item">
     <p>
-      &copy; {{ site.time | date: '%Y' }}. Все фото и видео материалы принадлежат 
-      Monte Production и могут быть использованы только для демонстрационных целей.
     </p>
   </div>
 </div>
