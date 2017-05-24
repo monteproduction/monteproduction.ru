@@ -175,8 +175,8 @@ hr.style-event {
 }
 
 
-a {
-  color: #0082ad;    
+a, a:active, a:hover {
+  color: #2A4479;    
   text-decoration: underline;
 }
 
@@ -255,9 +255,13 @@ footer {
     text-transform: uppercase;
     vertical-align: middle;
 }
-.menu_main a:hover, .links a:hover {
+.menu_main a:hover, .links a:hover  {
     opacity: 1;
-    transition: all 0.2s linear 0s;
+    text-shadow: 0 0 2px white;
+    transition-delay: 0s;
+    transition-duration: 0.2s;
+    transition-property: all;
+    transition-timing-function: linear;
 }
 .menu_main ul {
 	left: -50%;

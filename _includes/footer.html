@@ -25,56 +25,7 @@
 <script src="{{ site.baseurl }}/js/owl.carousel.js"></script>
 <script src="{{ site.baseurl }}/js/fotorama.js"></script>
 <script src="{{ site.baseurl }}/js/jquery.DEPreLoad.js"></script>
-<script>
-  $(document).ready(function() {
-    
-    setTimeout(function(){
-        $("#depreload .wrapper").animate({ opacity: 1 });
-    }, 400);
 
-    setTimeout(function(){
-        $("#depreload .logo").animate({ opacity: 1 });
-    }, 800);
-
-    var canvas  = $("#depreload .line")[0],
-        context = canvas.getContext("2d");
-
-    console.log("step1");
-
-    context.beginPath();
-    context.arc(280, 280, 260, Math.PI * 1.5, Math.PI * 1.6);
-    context.strokeStyle = '#fff';
-    context.lineWidth = 5;
-    context.stroke();
-
-    console.log("step2");
-
-    var loader = $("body").DEPreLoad({
-        OnStep: function(percent) {
-            console.log(percent + '%');
-            console.log("step3");
-
-            $("#depreload .line").animate({ opacity: 1 });
-            $("#depreload .perc").text(percent + "%");
-
-            if (percent > 5) {
-            console.log("step4");
-                context.clearRect(0, 0, canvas.width, canvas.height);
-                context.beginPath();
-                context.arc(280, 280, 260, Math.PI * 1.5, Math.PI * (1.5 + percent / 50), false);
-                context.stroke();
-            }
-        },
-        OnComplete: function() {
-            console.log("step5");
-            console.log('Всё загрузилось!');
-
-            $("#depreload .perc").text("done");
-            $("#depreload .loading").animate({ opacity: 0 });
-        }
-    });
-});
-  </script>
 <script src="{{ site.baseurl }}/js/common.js"></script>
 
 <script src="{{ site.baseurl }}/js/jquery.mmenu.min.all.js"></script>

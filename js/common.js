@@ -1,3 +1,54 @@
+ $(document).ready(function() {
+    
+    setTimeout(function(){
+        $("#depreload .wrapper").animate({ opacity: 1 });
+    }, 400);
+
+    setTimeout(function(){
+        $("#depreload .perc").animate({ opacity: 1 });
+    }, 800);
+
+    var canvas  = $("#depreload .line")[0],
+        context = canvas.getContext("2d");
+
+    context.beginPath();
+    context.arc(280, 280, 260, Math.PI * 1.5, Math.PI * 1.6);
+    context.strokeStyle = '#fff';
+    context.lineWidth = 5;
+    context.stroke();
+
+
+    var loader = $("body").DEPreLoad({
+        OnStep: function(percent) {
+            console.log(percent + '%');
+
+            $("#depreload .line").animate({ opacity: 1 });
+            $("#depreload .perc").text(percent + " %");
+
+            if (percent > 5) {
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.beginPath();
+                context.arc(280, 280, 260, Math.PI * 1.5, Math.PI * (1.5 + percent / 50), false);
+                context.stroke();
+            }
+        },
+        OnComplete: function() {
+            console.log('Всё загрузилось!');
+
+            $("#depreload .perc").text("MONTE");
+            $("#depreload .loading").animate({ opacity: 0 });
+            $("#depreload" ).addClass( 'zoom-effect' );
+
+            // $( "#depreload" ).click(function(){
+            //     $( "#depreload" ).remove()
+            // });
+
+            setTimeout(function(){
+                $( "#depreload" ).remove()
+            }, 1800);
+        }
+    });
+});
 $(function(){
     // $('.main_directions').hover(
     //     function() {
@@ -11,12 +62,6 @@ $(function(){
     //         $('#wedd').css( 'background-color', 'none' );
     //     }
     // );
-
-	$( "#preload-close" ).click(function() {
-        console.log("step6");
-        $( "#depreload" ).remove();
-        $( "#preload-close" ).remove();
-    });
     $('figure').hover(
             
         function() {
@@ -35,7 +80,7 @@ $(function(){
 
 $(function(){
 
-    var fotoblocks = ["#carousel-monte", "#fotoblock-2", "#fotoblock-3", "#fotoblock-4", "#fotoblock-5", "#fotoblock-6", "#fotoblock-7", "#fotoblock-8", "#fotoblock-9", "#fotoblock-10", "#fotoblock-11", "#fotoblock-12", "#fotoblock-13", "#fotoblock-14", "#fotoblock-15", "#fotoblock-16", "#fotoblock-17", "#fotoblock-18", "#fotoblock-19",               "#fotoblock-20"];
+    var fotoblocks = ['#carousel-monte', '#fotoblock-2', '#fotoblock-3', '#fotoblock-4', '#fotoblock-5', '#fotoblock-6', '#fotoblock-7', '#fotoblock-8', '#fotoblock-9', '#fotoblock-10', '#fotoblock-11', '#fotoblock-12', '#fotoblock-13', '#fotoblock-14', '#fotoblock-15', '#fotoblock-16', '#fotoblock-17', '#fotoblock-18', '#fotoblock-19', '#fotoblock-20'];
 
     $.each(fotoblocks, function(index, value){
         $(value).owlCarousel({

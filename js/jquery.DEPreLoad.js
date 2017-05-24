@@ -3,9 +3,10 @@
 
     /* Callbacks */
     var OnStep     = function(Percent) {
-        find(.depreload).css('opacity: 0')
+        find('.depreload').css('opacity: 0')
      };
-    var OnComplete = function()        { };
+    var OnComplete = function()        { 
+    };
 
     // Get all images from css and <img> tag
     var getImages = function(element) {
@@ -39,7 +40,7 @@
     };
 
     var loadImg = function(url) {
-        $(new Image()).load(loadComplete).error(loadComplete).attr('src', url);
+        $(new Image()).on('load',loadComplete).on('error',loadComplete).attr('src', url);
     };
 
     $.fn.DEPreLoad = function(options) {
