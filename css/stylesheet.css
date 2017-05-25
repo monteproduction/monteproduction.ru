@@ -212,7 +212,7 @@ header, footer {
     background-color: black;
     text-align: center;
     width: 100%;
-    z-index: 9;
+    z-index: 7;
 }
 header {
     position: fixed;
@@ -257,7 +257,7 @@ footer {
 }
 .menu_main a:hover, .links a:hover  {
     opacity: 1;
-    text-shadow: 0 0 2px white;
+    text-shadow: 0 0 10px white;
     transition-delay: 0s;
     transition-duration: 0.2s;
     transition-property: all;

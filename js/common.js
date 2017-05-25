@@ -42,10 +42,13 @@
             // $( "#depreload" ).click(function(){
             //     $( "#depreload" ).remove()
             // });
-
             setTimeout(function(){
-                $( "#depreload" ).remove()
-            }, 1800);
+                $( "#depreload" ).empty();
+            }, 800);
+            setTimeout(function(){
+                $("#depreload").remove();
+            }, 500);
+
         }
     });
 });
