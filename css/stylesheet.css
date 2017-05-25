@@ -255,6 +255,10 @@ footer {
     text-transform: uppercase;
     vertical-align: middle;
 }
+.logo a {
+    font-family: helveticaneuecyrroman,sans-serif;
+    font-size: 21px;
+}
 .menu_main a:hover, .links a:hover  {
     opacity: 1;
     text-shadow: 0 0 10px white;
@@ -305,11 +309,11 @@ nav.reduced {
     position: absolute;    
 }
 .dir_logo_prod {
-    background: rgba(0, 0, 0, 0) url("../images/LOGO_MEDIA.svg") no-repeat scroll center center / contain ;
+    background: rgba(0, 0, 0, 0) url("../images/logo/LOGO_MEDIA.svg") no-repeat scroll center center / contain ;
     left: 95px;
 }
 .dir_logo_wedd {
-    background: rgba(0, 0, 0, 0) url("../images/LOGO_E_and_W.svg") no-repeat scroll center center / contain ;
+    background: rgba(0, 0, 0, 0) url("../images/logo/LOGO_E_and_W.svg") no-repeat scroll center center / contain ;
     right: 95px;
 }
 .dir_logo{
@@ -357,21 +361,21 @@ nav.reduced {
 
 #video > .mob_photo,
 #video > .dir_photo {    
-	background-image: url("../images/video_production_new.jpg");
+	background-image: url("../images/background/video_production_new.jpg");
 }
 #video > .mob_photo {
     background-position: 40% 45%;
 }
 #event > .mob_photo,
 #event > .dir_photo {
-	background-image: url("../images/event_new.jpg");
+	background-image: url("../images/background/event_new.jpg");
 }
 #event > .mob_photo {
     background-position: 41% 5%;
 }
 #wedd > .mob_photo,
 #wedd > .dir_photo {
-	background-image: url("../images/wedding_new.jpg");
+	background-image: url("../images/background/wedding_new.jpg");
 }
 #wedd > .mob_photo {
     background-position: 64% 58%;
@@ -591,6 +595,35 @@ figure.effect-lily:hover p {
 	opacity: 1;
 	-webkit-transform: scale3d(1.1, 1.1, 1.0);
 	transform: scale3d(1.1, 1.1, 1.0);
+  }
+} 
+.zoom-out-effect {
+	-webkit-animation-name: zoomOut;
+	animation-name: zoomOut;
+	-webkit-animation-duration: 0.3s;
+	animation-duration: 0.3s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	animation-timing-function: cubic-bezier(1,0,0,.5); 
+	will-change: transform, opacity;
+}
+@-webkit-keyframes zoomOut {
+  0% {
+  }
+  100% {
+	opacity: 0;
+	-webkit-transform: scale3d(0.9, 0.9, 1.0);
+	transform: scale3d(0.9, 0.9, 1.0);
+  }
+}
+@keyframes zoomOut {
+  0% {
+  }
+  100% {
+	z-index: 8;
+	opacity: 0;
+	-webkit-transform: scale3d(0.9, 0.9, 1.0);
+	transform: scale3d(0.9, 0.9, 1.0);
   }
 } 
 /*-----------------*/

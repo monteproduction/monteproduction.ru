@@ -33,22 +33,17 @@
             }
         },
         OnComplete: function() {
-            console.log('Всё загрузилось!');
+            console.log('Картинки загрузились!');
 
             $("#depreload .perc").text("MONTE");
-            $("#depreload .loading").animate({ opacity: 0 });
-            $("#depreload" ).addClass( 'zoom-effect' );
-
-            // $( "#depreload" ).click(function(){
-            //     $( "#depreload" ).remove()
-            // });
+            $("#depreload .loading").animate({ opacity: 0 },800);
             setTimeout(function(){
-                $( "#depreload" ).empty();
-            }, 800);
+                $("#depreload" ).addClass( 'zoom-out-effect' );
+                $("#depreload").animate( { opacity: 0 }, 600);
+            }, 1400);
             setTimeout(function(){
-                $("#depreload").remove();
-            }, 500);
-
+                $("#depreload" ).remove();
+            }, 1400);
         }
     });
 });
