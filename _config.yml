@@ -7,7 +7,7 @@ url: "http://monteproduction.ru/"
 title_description: "Организация мероприятий, видеопродакшн, постпродакшн"
 title_image: 
 google_analytics: 
-addthis_id:
+addthis_id: generate
 post_limit: 5
 
 # Social usernames/URLs
