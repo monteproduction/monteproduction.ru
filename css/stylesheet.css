@@ -176,7 +176,7 @@ hr.style-event {
 
 
 a, a:active, a:hover {
-  color: #2A4479;    
+  color: white;    
   text-decoration: underline;
 }
 
@@ -224,6 +224,23 @@ footer {
     bottom: 0;
     float: left;
     min-height: 160px;
+}
+footer p {
+    color: #777;
+    font-size: 15px;
+    margin: 4px auto 0;
+    max-width: 760px;
+    text-align: center;
+}
+footer ul {
+    line-height: 35px;
+}
+footer .klimov {
+    color: #777;
+    margin: 4px auto 20px;
+}
+.font-fantasy {
+    font-family: Arial, Helvetica, sans-serif;
 }
 .logo {
     margin-top: -3px;
@@ -578,20 +595,16 @@ figure.effect-lily:hover p {
 }
 @-webkit-keyframes zoomIn {
   0% {
-	z-index: 8;
   }
   100% {
-	z-index: 8;
 	-webkit-transform: scale3d(1.1, 1.1, 1.0);
 	transform: scale3d(1.1, 1.1, 1.0);
   }
 }
 @keyframes zoomIn {
   0% {
-	z-index: 8;
   }
   100% {
-	z-index: 8;
 	opacity: 1;
 	-webkit-transform: scale3d(1.1, 1.1, 1.0);
 	transform: scale3d(1.1, 1.1, 1.0);
@@ -1240,20 +1253,6 @@ address div {
 .socials li a {
     color: white;
 }
-footer p {
-    color: #777;
-    font-size: 15px;
-    margin: 4px auto 0;
-    max-width: 760px;
-    text-align: center;
-}
-footer ul {
-    line-height: 35px;
-}
-footer .klimov {
-    color: white;
-    margin: 4px auto 20px;
-}
 .bot_links {
     color: gray;
     margin: 25px auto 0;
@@ -1331,4 +1330,87 @@ footer .klimov {
 }
 .sublevel {
     margin-left: 5px;
+}
+
+#depreload {
+    height: 100%;
+    width: 100%;
+}
+
+.table {
+	display: table;
+}
+
+.table-cell {
+	display: table-cell;
+}
+
+.wrapper {
+	vertical-align: middle;
+	opacity: 0;
+}
+
+#depreload {
+    background-size: cover;
+    background-color: #ccc;
+    position: fixed;
+    text-align: center;
+    z-index: 99;
+}
+
+#depreload .circle {
+	width: 520px;
+	height: 520px;
+	border: 1px solid rgba(255,255,255,.5);
+	border-radius: 50%;
+	box-shadow: 0 0 1px 0px rgb(255,255,255);
+	margin: 0 auto;
+	position: relative;
+}
+
+#depreload .line {
+	margin: -20px;
+	opacity: 0;
+}
+
+#depreload .perc {
+    color: #fff;
+    font-family: "helveticaneuecyrroman", sans-serif;
+    font-size: 2.3em;
+    font-weight: 100;
+    letter-spacing: 6px;
+    top: 232px;
+    text-transform: uppercase;
+}
+
+#depreload .loading {
+    color: #fff;
+    font-family: "Open Sans",sans-serif;
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    top: 360px;
+}
+
+#depreload .perc, #depreload .loading {
+	position: absolute;
+	width: 100%;
+}
+
+#depreload .logo {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 139px;
+	height: 145px;
+	margin-left: -69px;
+	margin-top: -72px;
+	opacity: 0;
+}
+
+.gallery {
+	position: absolute;
+	width: 100%;
+	overflow: hidden;
 }

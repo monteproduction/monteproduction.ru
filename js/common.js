@@ -1,52 +1,98 @@
  $(document).ready(function() {
     
-    setTimeout(function(){
-        $("#depreload .wrapper").animate({ opacity: 1 });
-    }, 400);
+    var cookie_date = new Date;
+    var doc_title = document.title;
 
-    setTimeout(function(){
-        $("#depreload .perc").animate({ opacity: 1 });
-    }, 800);
+    function get_cookie ( cookie_name )
+        {
+            var results = document.cookie.match ( '(^|;)?' + cookie_name + '=([^;]*)(;|$)' );
 
-    var canvas  = $("#depreload .line")[0],
-        context = canvas.getContext("2d");
-
-    context.beginPath();
-    context.arc(280, 280, 260, Math.PI * 1.5, Math.PI * 1.6);
-    context.strokeStyle = '#fff';
-    context.lineWidth = 5;
-    context.stroke();
-
-
-    var loader = $("body").DEPreLoad({
-        OnStep: function(percent) {
-            console.log(percent + '%');
-
-            $("#depreload .line").animate({ opacity: 1 });
-            $("#depreload .perc").text(percent + " %");
-
-            if (percent > 5) {
-                context.clearRect(0, 0, canvas.width, canvas.height);
-                context.beginPath();
-                context.arc(280, 280, 260, Math.PI * 1.5, Math.PI * (1.5 + percent / 50), false);
-                context.stroke();
-            }
-        },
-        OnComplete: function() {
-            console.log('Картинки загрузились!');
-
-            $("#depreload .perc").text("MONTE");
-            $("#depreload .loading").animate({ opacity: 0 },800);
-            setTimeout(function(){
-                $("#depreload" ).addClass( 'zoom-out-effect' );
-                $("#depreload").animate( { opacity: 0 }, 600);
-            }, 1400);
-            setTimeout(function(){
-                $("#depreload" ).remove();
-            }, 1400);
+            if ( results )
+                return ( unescape ( results[2] ) );
+            else
+                return null;
         }
+
+    function set_cookie ( name, value, cookie_date, path, domain, secure )
+        {
+            var cookie_string = name + "=" + escape ( value );
+            
+            if ( cookie_date )
+            {
+                cookie_string += "; expires=" + cookie_date.toGMTString();
+            }
+            
+            if ( path )
+                    cookie_string += "; path=" + escape ( path );
+            
+            if ( domain )
+                    cookie_string += "; domain=" + escape ( domain );
+            
+            if ( secure )
+                    cookie_string += "; secure";
+            
+            document.cookie = cookie_string;
+        }
+
+    console.log( doc_title );
+    console.log(get_cookie(doc_title));
+
+    if (  !get_cookie ( doc_title ) )
+        {
+            console.log("entered Depreload Script");
+            setTimeout(function(){
+                $("#depreload .wrapper").animate({ opacity: 1 });
+            }, 400);
+
+            setTimeout(function(){
+                $("#depreload .perc").animate({ opacity: 1 });
+            }, 800);
+
+            var canvas  = $("#depreload .line")[0],
+                context = canvas.getContext("2d");
+
+            context.beginPath();
+            context.arc(280, 280, 260, Math.PI * 1.5, Math.PI * 1.6);
+            context.strokeStyle = '#fff';
+            context.lineWidth = 5;
+            context.stroke();
+
+            var loader = $("body").DEPreLoad({
+                OnStep: function(percent) {
+
+                    $("#depreload .line").animate({ opacity: 1 });
+                    $("#depreload .perc").text(percent + " %");
+
+                    if (percent > 5) {
+                        context.clearRect(0, 0, canvas.width, canvas.height);
+                        context.beginPath();
+                        context.arc(280, 280, 260, Math.PI * 1.5, Math.PI * (1.5 + percent / 50), false);
+                        context.stroke();
+                    }
+                },
+                OnComplete: function() {
+                    console.log('Картинки загрузились!');
+
+                    $("#depreload .perc").text("MONTE");
+                    $("#depreload .loading").animate({ opacity: 0 },800);
+                    setTimeout(function(){
+                        $("#depreload" ).addClass( 'zoom-out-effect' );
+                    }, 1100);
+                    setTimeout(function(){
+                        $("#depreload" ).remove();
+                    }, 1700);
+                    
+                    
+                    cookie_date.setTime ( cookie_date.getTime() + 60*60*24 );
+                    set_cookie (doc_title, "preloaded-page", cookie_date);
+                }
+            });
+        }
+        else {
+            $("#depreload" ).remove();
+        }       
+            
     });
-});
 $(function(){
     // $('.main_directions').hover(
     //     function() {
