@@ -1,7 +1,10 @@
+ 
+/* Sidebar nav */
+ 
  $(document).ready(function() {
     
     var cookie_date = new Date;
-    var doc_title = document.title;
+    var doc_adress = (window.location.href).substr((window.location.protocol.length + 2));
 
     function get_cookie ( cookie_name )
         {
@@ -34,12 +37,9 @@
             document.cookie = cookie_string;
         }
 
-    console.log( doc_title );
-    console.log(get_cookie(doc_title));
-
-    if (  !get_cookie ( doc_title ) )
+    if (  !get_cookie ( doc_adress ) )
         {
-            console.log("entered Depreload Script");
+            console.log("Entered Depreload Script");
             setTimeout(function(){
                 $("#depreload .wrapper").animate({ opacity: 1 });
             }, 400);
@@ -71,7 +71,7 @@
                     }
                 },
                 OnComplete: function() {
-                    console.log('Картинки загрузились!');
+                    console.log('Images are loaded!');
 
                     $("#depreload .perc").text("MONTE");
                     $("#depreload .loading").animate({ opacity: 0 },800);
@@ -82,30 +82,19 @@
                         $("#depreload" ).remove();
                     }, 1700);
                     
-                    
-                    cookie_date.setTime ( cookie_date.getTime() + 60*60*24 );
-                    set_cookie (doc_title, "preloaded-page", cookie_date);
+                    cookie_date.setTime ( cookie_date.getTime() + 60*60*24*1000 );
+                    set_cookie (doc_adress, "preloaded-page", cookie_date);
                 }
             });
         }
         else {
             $("#depreload" ).remove();
+            console.log( doc_adress + " - " + get_cookie(doc_adress) );
         }       
-            
     });
+    
+/* Sidebar nav */
 $(function(){
-    // $('.main_directions').hover(
-    //     function() {
-    //         $('#video').css( 'background-color', 'rgba(0, 112, 192, 0.8)' );
-    //         $('#ivent').css( 'background-color', 'rgba(233, 203, 23, 0.8)' );
-    //         $('#wedd').css( 'background-color', 'rgba(247, 21, 188, 0.8)' );
-    //     }, 
-    //     function() {
-    //         $('#video').css( 'background-color', 'none' );
-    //         $('#ivent').css( 'background-color', 'none' );
-    //         $('#wedd').css( 'background-color', 'none' );
-    //     }
-    // );
     $('figure').hover(
             
         function() {
