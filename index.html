@@ -3,8 +3,26 @@ layout: mainpage
 title: Главная
 make-smaller-titles: true
 ---
-<div class="fix"></div>
-<div class="grid main_directions hidden-xs hidden-sm">
+<div class="info-wrapper hidden-xs hidden-sm">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="monte-full">
+					<img src="/images/logo/Monte_LOGO_WHITE.svg" class="" style="width: 275px;" alt="Monte Production">
+					Monte Production
+				</div>
+				<h1 class="balance-text" style="">Automatically track what you're watching.</h1>
+				<h2 class="balance-text" style="">Find where to watch TV &amp; movies and discover what's hot.</h2>
+				<div class="buttons">
+					<a class="btn btn-primary hidden-xs" href="/auth/join">Join trakt for free</a>
+					<a class="btn btn-primary visible-xs" href="/auth/join">Join trakt</a>
+					<a class="btn btn-signin visible-xs" href="/auth/signin">Sign in</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="grid main_directions hidden-xs hidden-sm" id="scene">
 	<figure class="effect-steve t-cell t-cell_1">
 		<a id="video" href="{{ site.baseurl }}/video_production/">
 			<div class="figurecircle"> </div>
@@ -36,7 +54,7 @@ make-smaller-titles: true
 		</a>	
 	</figure>
 </div>
-<div class="fixmob hidden-md hidden-lg"></div>
+      <div class="fix hidden-md hidden-lg"></div>
 <div class="mobile_directions hidden-md	hidden-lg">
 	<div id="video" >
 		<a class="mob_photo" href="{{ site.baseurl }}/video_production/">

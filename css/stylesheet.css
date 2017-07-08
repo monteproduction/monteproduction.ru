@@ -64,6 +64,7 @@ h4 {
 }
 section {
 	padding: 22px 0;
+    min-height: 100vh;
 }
 table {
 	border-collapse:collapse;
@@ -209,18 +210,32 @@ p strong {
 }
 
 header, footer {
-    background-color: black;
     text-align: center;
     width: 100%;
     z-index: 7;
 }
 header {
     position: fixed;
+    background-color: transparent;
+}
+header #animate:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: translateZ(0px);
+    transition-delay: 0s;
+    transition-duration: 0.5s;
+    transition-property: background;
+    transition-timing-function: ease;
+    width: 100%;
+    z-index: 1500;
+}
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.6);
 }
 .page-content {
     min-height: 100vh;
 }
 footer {
+    background-color: black;
     bottom: 0;
     float: left;
     min-height: 160px;
@@ -250,7 +265,6 @@ footer .klimov {
     width: 100%;
 }
 .menu_main {
-    background-color: black;
     height: 100px;
     line-height: 40px;
     margin: 0px;
@@ -1368,4 +1382,16 @@ address div {
 	position: absolute;
 	width: 100%;
 	overflow: hidden;
+}
+.info-wrapper {
+    position: absolute;
+}
+.monte-full {
+    background: white top left;
+    height: 100px;
+    width: 500px;
+    margin: 0 auto;
+}
+.monte-full img {
+    height: 100px;
 }
