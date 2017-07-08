@@ -7,8 +7,11 @@ $(function() {
   // Init ScrollMagic Controller
   var scrollMagicController = new ScrollMagic.Controller();
   
-  // Build scene
-  new ScrollMagic.Scene({triggerElement: "#direction_scene"})
+  // Trigger scene
+  new ScrollMagic.Scene({
+                    triggerElement: '#menu_opacity',
+                    triggerHook: 'onEnter'
+                })
                             .setClassToggle('#animate', 'scrolled')
                             .addTo(scrollMagicController);
   
