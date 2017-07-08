@@ -216,20 +216,22 @@ header, footer {
 }
 header {
     position: fixed;
-    background-color: transparent;
-}
-header #animate:hover {
     background-color: rgba(0, 0, 0, 0.9);
+}
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.6);
+    transform: scale3d(2, 2, 1);
+    transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1) 0s, background-color 0.35s, background-image 0.35s;
+}
+header.scrolled:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+header.scrolled:hover, header.scrolled{ 
     transform: translateZ(0px);
     transition-delay: 0s;
     transition-duration: 0.5s;
     transition-property: background;
     transition-timing-function: ease;
-    width: 100%;
-    z-index: 1500;
-}
-header.scrolled {
-    background-color: rgba(0, 0, 0, 0.6);
 }
 .page-content {
     min-height: 100vh;

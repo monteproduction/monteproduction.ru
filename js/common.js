@@ -1,46 +1,18 @@
  
-
 /* Main page effects */
 
 // Top menu effects 
 $(function() {
   
   // Init ScrollMagic Controller
-  var scrollMagicController = new ScrollMagic();
+  var scrollMagicController = new ScrollMagic.Controller();
   
-  // Create Animation for 0.5s
-  var tween = TweenMax.to('#animate', 0.5, {
-    backgroundColor: 'rgb(255, 39, 46)',
-    scale: 5
-  });
-  
-  // Create the Scene and trigger when visible
-  var scene = new ScrollScene({
-    triggerElement: '#scene',
-    offset: 150 /* offset the trigger 150px below #scene's top */
-  })
-  .setTween(tween)
-  .addTo(scrollMagicController);
-  
-  // Add debug indicators fixed on right side
-   scene.addIndicators();
+  // Build scene
+  new ScrollMagic.Scene({triggerElement: "#direction_scene"})
+                            .setClassToggle('#animate', 'scrolled')
+                            .addTo(scrollMagicController);
   
 });
-
-
-// $(function () {
-
-//     var header = $('header');
-//     var wrap = $('.wrap');
-
-//     $( "p:last" ).text( "html scrollTop:" + $("html").scrollTop() );
-//     alert( "Высота документа = " + $("html").height() );
-//     alert( "Размер окна: \n" + $(window).width() + "\n" + $(window).height() )
-
-//     window.scroll(function () {
-//         header.addClass( '.scrolled' );
-//     });
-// });
 
 $(function(){
 
