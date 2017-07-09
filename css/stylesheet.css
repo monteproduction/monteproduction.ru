@@ -217,19 +217,77 @@ header, footer {
 header {
     position: fixed;
     background-color: rgba(0, 0, 0, 1);
-}
-header.scrolled {
-    background-color: rgba(0, 0, 0, 0.6);
-}
-header.scrolled:hover {
-    background-color: rgba(0, 0, 0, 0.9);
-}
-header.scrolled:hover, header.scrolled, header { 
     transform: translateZ(0px);
     transition-delay: 0s;
     transition-duration: 0.5s;
-    transition-property: background;
+    transition-property: background, transform;
     transition-timing-function: ease;
+}
+header.scrolled-effect {
+    background-color: rgba(0, 0, 0, 0.6);  
+    transform: translateY(-35px);
+}
+.margined-17 {
+    margin-top: 17px;
+}
+/*.zoom-effect {
+	-webkit-animation-name: zoomIn;
+	animation-name: zoomIn;
+	-webkit-animation-duration: 0.3s;
+	animation-duration: 0.3s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	animation-timing-function: cubic-bezier(1,0,0,.5); 
+	will-change: transform, opacity;
+}
+@-webkit-keyframes zoomIn {
+  0% {
+  }
+  100% {
+	-webkit-transform: scale3d(1.1, 1.1, 1.0);
+	transform: scale3d(1.1, 1.1, 1.0);
+  }
+}
+@keyframes zoomIn {
+  0% {
+  }
+  100% {
+	opacity: 1;
+	-webkit-transform: scale3d(1.1, 1.1, 1.0);
+	transform: scale3d(1.1, 1.1, 1.0);
+  }
+} 
+.zoom-out-effect {
+	-webkit-animation-name: zoomOut;
+	animation-name: zoomOut;
+	-webkit-animation-duration: 0.3s;
+	animation-duration: 0.3s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	animation-timing-function: cubic-bezier(1,0,0,.5); 
+	will-change: transform, opacity;
+}
+@-webkit-keyframes zoomOut {
+  0% {
+  }
+  100% {
+	opacity: 0;
+	-webkit-transform: scale3d(0.9, 0.9, 1.0);
+	transform: scale3d(0.9, 0.9, 1.0);
+  }
+}
+@keyframes zoomOut {
+  0% {
+  }
+  100% {
+	z-index: 8;
+	opacity: 0;
+	-webkit-transform: scale3d(0.9, 0.9, 1.0);
+	transform: scale3d(0.9, 0.9, 1.0);
+  }
+} */
+header.scrolled:hover {
+    background-color: rgba(0, 0, 0, 0.9);
 }
 .page-content {
     min-height: 100vh;
@@ -259,6 +317,9 @@ footer .klimov {
 }
 .logo {
     margin-top: -3px;
+}
+.margined-13 {
+    margin-top: 13px;
 }
 .fix-top {
     height: 30px;

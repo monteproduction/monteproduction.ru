@@ -1,22 +1,23 @@
- 
-/* Main page effects */
 
 // Top menu effects 
 $(function() {
   
-  // Init ScrollMagic Controller
-  var scrollMagicController = new ScrollMagic.Controller();
-  
-  // Trigger scene
-  new ScrollMagic.Scene({
+    // Init ScrollMagic Controller
+    var scrollMagicController = new ScrollMagic.Controller();
+
+    var setMultipleClasses = TweenLite.to("#animate", 2, {backgroundColor:"#ff0000", width:"50%", top:"100px", ease:Power2.easeInOut});
+ 
+    // Trigger scene
+    new ScrollMagic.Scene({
                     triggerElement: '#menu_opacity',
-                    triggerHook: 'onEnter'
+                    triggerHook: 'onLeave'
                 })
-                            .setClassToggle('#animate', 'scrolled')
+                            .setTween(setMultipleClasses)
                             .addTo(scrollMagicController);
   
 });
 
+// Top menu effects 
 $(function(){
 
     $('figure').hover(
