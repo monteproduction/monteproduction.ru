@@ -1,18 +1,35 @@
 
 // Top menu effects 
 $(function() {
-  
+    
+    var $topMenu = $('#animate');
+    var $Logo = $('#logo');
+    var $TopLinks = $('.top-links');
+
     // Init ScrollMagic Controller
     var scrollMagicController = new ScrollMagic.Controller();
+    var TopMenuTl = new TimelineLite();
 
-    var setMultipleClasses = TweenLite.to("#animate", 2, {backgroundColor:"#ff0000", width:"50%", top:"100px", ease:Power2.easeInOut});
- 
+    function parallel(d) {
+        var tl = new TimelineLite();
+        tl .to(".dir_logo_prod, .dir_logo_wedd", d, {autoAlpha:0})
+            .add("twoo", 0)
+            .to($topMenu,   d, {heigth:"50%"}, "twoo")
+            .to($Logo,      d, {top:14}, "twoo")
+            .to($TopLinks,  d, {top:16}, "twoo");
+        return tl;
+    }
+
+
+    var animateTopMenu = TopMenuTl.add(parallel(0.4), 0);
+
     // Trigger scene
     new ScrollMagic.Scene({
                     triggerElement: '#menu_opacity',
                     triggerHook: 'onLeave'
                 })
-                            .setTween(setMultipleClasses)
+                            .setClassToggle('#animate', 'scrolled-effect')
+                            .setTween(animateTopMenu)
                             .addTo(scrollMagicController);
   
 });
