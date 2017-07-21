@@ -14,21 +14,21 @@ $(function() {
         var tl = new TimelineLite();
         tl .to(".dir_logo_prod, .dir_logo_wedd", d, {autoAlpha:0})
             .add("twoo", 0)
-            .to($topMenu,   d, {heigth:"50%"}, "twoo")
-            .to($Logo,      d, {top:14}, "twoo")
-            .to($TopLinks,  d, {top:16}, "twoo");
+            .to($topMenu,   d, {y:-35}, "twoo")
+            .to($Logo,      d, {top:17}, "twoo")
+            .to($TopLinks,  d, {top:17}, "twoo");
         return tl;
-    }
+    } 
 
 
     var animateTopMenu = TopMenuTl.add(parallel(0.4), 0);
 
     // Trigger scene
     new ScrollMagic.Scene({
-                    triggerElement: '#menu_opacity',
+                    offset: 50,
+                    triggerElement: '#menu_animate',
                     triggerHook: 'onLeave'
                 })
-                            .setClassToggle('#animate', 'scrolled-effect')
                             .setTween(animateTopMenu)
                             .addTo(scrollMagicController);
   
