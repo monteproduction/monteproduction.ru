@@ -1,53 +1,76 @@
 
-// Top menu effects 
-$(function() {
+        // *************** Top menu effects *************** //
+
+ $(document).ready(function() {
     
-    var $topMenu = $('#animate');
-    var $Logo = $('#logo');
-    var $TopLinks = $('.top-links');
+    var $topMenu = $("#animate");
+    var $TopLinks = $(".top-links, #logo, .dots, #header-search-button");
 
     // Init ScrollMagic Controller
     var scrollMagicController = new ScrollMagic.Controller();
     var TopMenuTl = new TimelineLite();
-
-    function parallel(d) {
-        var tl = new TimelineLite();
-        tl .to(".dir_logo_prod, .dir_logo_wedd", d, {autoAlpha:0})
-            .add("twoo", 0)
-            .to($topMenu,   d, {y:-35}, "twoo")
-            .to($Logo,      d, {top:17}, "twoo")
-            .to($TopLinks,  d, {top:17}, "twoo");
-        return tl;
-    } 
-
-
-    var animateTopMenu = TopMenuTl.add(parallel(0.4), 0);
+    var animateTopMenu = TopMenuTl.add(TopShade(.1, "scene"), 0);
 
     // Trigger scene
     new ScrollMagic.Scene({
                     offset: 50,
-                    triggerElement: '#menu_animate',
-                    triggerHook: 'onLeave'
+                    triggerElement: "#menu_animate",
+                    triggerHook: "onLeave"
                 })
                             .setTween(animateTopMenu)
                             .addTo(scrollMagicController);
-  
-});
 
-// Top menu effects 
-$(function(){
+    function TopShade(d, direction) {
 
-    $('figure').hover(
+        var tl = new TimelineLite();
+
+        tl  .add("twoo",        d)
+            .to("#animate", d, { backgroundColor: "rgba(0,0,0,.6)" })
+            .to(".dir_logo_prod_header, .dir_logo_wedd_header", d, {autoAlpha:0}, "twoo")
+            .to(".dots, #header-search-button", d, {autoAlpha:1}, "twoo")
+            .to($topMenu,       d, {y:-35}, "twoo")
+            .to($TopLinks,      d, {top:18}, "twoo");
+
+        return tl;
+
+    }
+
+    $( "#animate" ).hover(
 
         function() {
 
-            $( this ).addClass( 'zoom-effect' );
-            $( this ).find( '.figurecircle' ).addClass( 'scale-effect' );
+            $( this ).css( "background-color", "rgba(0,0,0,1)" );
+
+        }, function() {
+            
+            $( this ).css( "background-color", "rgba(0,0,0,.6)" );
+
+        });
+        
+    $(".dropdown-toggle").dropdown();
+ });
+
+ 
+        // *************** Main page effects *************** //
+
+$(function(){
+
+// $("#header-search-button").off("click").click(function(){$(this).hasClass("btn-primary")?($(this).removeClass("btn-primary");
+// $("#header-search-button").removeClass("btn-primary");
+// $("#header-search-button").dblclick(function(){$(this).hasClass("open")||$(this).closest("form").submit()});
+// $("#header-search-button").click()});
+
+    $("figure").hover(
+
+        function() {
+
+            $( this ).addClass( "zoom-effect" );
+            $( this ).find( ".figurecircle" ).addClass( "scale-effect" );
 
         }, function() {
 
-            $( this ).removeClass( 'zoom-effect' );
-            $( this ).find( '.figurecircle' ).removeClass( 'scale-effect' );
+            $( this ).removeClass( "zoom-effect" );
+            $( this ).find( ".figurecircle" ).removeClass( "scale-effect" );
         });
 
 	return false;
@@ -57,7 +80,7 @@ $(function(){
 
 $(function(){
 
-    var fotoblocks = ['#carousel-monte', '#fotoblock-2', '#fotoblock-3', '#fotoblock-4', '#fotoblock-5', '#fotoblock-6', '#fotoblock-7', '#fotoblock-8', '#fotoblock-9', '#fotoblock-10', '#fotoblock-11', '#fotoblock-12', '#fotoblock-13', '#fotoblock-14', '#fotoblock-15', '#fotoblock-16', '#fotoblock-17', '#fotoblock-18', '#fotoblock-19', '#fotoblock-20'];
+    var fotoblocks = ["#carousel-monte", "#fotoblock-2", "#fotoblock-3", "#fotoblock-4", "#fotoblock-5", "#fotoblock-6", "#fotoblock-7", "#fotoblock-8", "#fotoblock-9", "#fotoblock-10", "#fotoblock-11", "#fotoblock-12", "#fotoblock-13", "#fotoblock-14", "#fotoblock-15", "#fotoblock-16", "#fotoblock-17", "#fotoblock-18", "#fotoblock-19", "#fotoblock-20"];
 
     $.each(fotoblocks, function(index, value){
         $(value).owlCarousel({
@@ -73,16 +96,16 @@ $(function(){
 
     // Custom Navigation Events
     $(".next").click(function(){
-    owl.trigger('owl.next');
+    owl.trigger("owl.next");
     })
     $(".prev").click(function(){
-    owl.trigger('owl.prev');
+    owl.trigger("owl.prev");
     })
     $(".play").click(function(){
-    owl.trigger('owl.play',2500); //owl.play event accept autoPlay speed as second parameter
+    owl.trigger("owl.play",2500); //owl.play event accept autoPlay speed as second parameter
     })
     $(".stop").click(function(){
-    owl.trigger('owl.stop');
+    owl.trigger("owl.stop");
     })
 
 });
@@ -96,7 +119,7 @@ $(function(){
 
     function get_cookie ( cookie_name )
         {
-            var results = document.cookie.match ( '(^|;)?' + cookie_name + '=([^;]*)(;|$)' );
+            var results = document.cookie.match ( "(^|;)?" + cookie_name + "=([^;]*)(;|$)" );
 
             if ( results )
                 return ( unescape ( results[2] ) );
@@ -141,7 +164,7 @@ $(function(){
 
             context.beginPath();
             context.arc(280, 280, 260, Math.PI * 1.5, Math.PI * 1.6);
-            context.strokeStyle = '#fff';
+            context.strokeStyle = "#fff";
             context.lineWidth = 5;
             context.stroke();
 
@@ -159,12 +182,12 @@ $(function(){
                     }
                 },
                 OnComplete: function() {
-                    console.log('Images are loaded!');
+                    console.log("Images are loaded!");
 
                     $("#depreload .perc").text("MONTE");
                     $("#depreload .loading").animate({ opacity: 0 },800);
                     setTimeout(function(){
-                        $("#depreload" ).addClass( 'zoom-out-effect' );
+                        $("#depreload" ).addClass( "zoom-out-effect" );
                     }, 1100);
                     setTimeout(function(){
                         $("#depreload" ).remove();
@@ -180,6 +203,5 @@ $(function(){
             console.log( doc_adress + " - " + get_cookie(doc_adress) );
         }
 });
-
 
 

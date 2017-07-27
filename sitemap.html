@@ -1,22 +1,30 @@
 ---
 layout: default
-title: Поиск по услугам
-permalink: /search/
+title: Карта сайта
+permalink: /sitemap/
 ---
 
 <div class="container-fluid index">
+
   <div class="row index all-posts">
 
-    <h1 class="header author-header">Поиск</h1>
+    <h1 class="header">Карта сайта</h1>
 
-    <div id="search-container">
-      <input type="text" id="search-input" placeholder="Например: Праздники, Анимация...">
-      <div class="col-md-12 content-panel articles">
-        <ul id="results-container"></ul>
-      </div>
-    </div>
+        <ul class="sitemap_area">
+        {% assign pages_list = site.pages | sort:"url" %}
+        
+        {% for node in pages_list %}
+
+          {% if node.title != null %}
+            {% if node.layout != 'feed' %}
+              <li><a href="{{ node.url }}">{{ node.title }}</a></li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        </ul>
 
   </div>
+
 </div>
 
 <hr class="search-hr" />
@@ -35,3 +43,4 @@ permalink: /search/
 				<a href="mailto:montepro@inbox.ru">montepro@inbox.ru</a>
 			</div>
 		</address>				
+    

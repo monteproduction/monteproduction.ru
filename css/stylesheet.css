@@ -223,13 +223,6 @@ header {
     transition-property: background, transform;
     transition-timing-function: ease;
 }
-/* header.scrolled-effect {
-    background-color: rgba(0, 0, 0, 0.6);  
-}
-header:hover,
-header.scrolled-effect:hover {
-    background-color: rgba(0, 0, 0, 0.9);
-} */
 .page-content {
     min-height: 100vh;
 }
@@ -257,7 +250,7 @@ footer .klimov {
     font-family: Arial, Helvetica, sans-serif;
 }
 #logo {
-    margin-top: -3px;
+    margin-top: 0px;
 }
 .margined-13 {
     margin-top: 13px;
@@ -266,9 +259,12 @@ footer .klimov {
     height: 30px;
     width: 100%;
 }
+#search-input {
+    color: black;
+}
 .menu_main {
     height: 100px;
-    line-height: 40px;
+    line-height: 36px;
     margin: 0px;
     text-align: center;
 }
@@ -281,7 +277,6 @@ footer .klimov {
     font-size: 16px;
     font-style: normal;
     font-weight: normal;
-    height: 40px;
     letter-spacing: 3px;
     padding: 0;
     text-decoration: none;
@@ -291,34 +286,6 @@ footer .klimov {
 .logo a {
     font-family: helveticaneuecyrroman,sans-serif;
     font-size: 21px;
-}
-.menu_main a:hover, .links a:hover  {
-    opacity: 1;
-    text-shadow: 0 0 10px white;
-    transition-delay: 0s;
-    transition-duration: 0.2s;
-    transition-property: all;
-    transition-timing-function: linear;
-}
-.menu_main ul {
-	left: -50%;
-}
-.menu_main li {
-	float: left;
-}
-.menu_main ul {
-    height: 0;
-    left: -9999px;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: -9999px;
-    width: 0;
-}
-.menu_main *:hover ul {
-    left: 0;
-    top: 45px;
-    width: 100%;
 }
 nav {
     backface-visibility: hidden;
@@ -335,26 +302,88 @@ nav.reduced {
     overflow: hidden;
 }
 .dir_logo_prod, 
-.dir_logo_wedd {
+.dir_logo_wedd,
+.dir_logo_prod_header,
+.dir_logo_wedd_header,
+#header-search-button,
+.dots {
     top: 10px;
     width: 70px;
     height: 70px;
     position: absolute;    
 }
-.dir_logo_prod {
+.dots, #header-search-button {
+    opacity: 0;
+    transition: all .2s ease-in-out;
+}
+.dots {
+    right: 95px;
+    line-height: 1;
+    color: #999;
+    fill: white;
+    vertical-align: middle;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    height: 100px;
+    padding: 0 12px;    
+}
+.dots .dots-size{
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+}
+#header-search-button {
+    left: 95px;
+    line-height: 1;
+    color: white;
+    padding: 0 12px;
+    height: 115px;
+    vertical-align: middle;
+    background-color: transparent;
+}
+
+#header-search-button i.fa {
+    left: 95px;
+    margin-top: 42px;
+}
+.dots ul {
+    left: inherit;
+    width: auto;
+    height: auto;
+    /* -webkit-transform: scale(1) translate(0); */
+    /* -webkit-transform: scale(.8) translate(-10%,-10%); */
+    /* -webkit-transform: scale(.85) translateY(-10%); */
+    /* transform: scale(1) translate(0); */
+    /* transform: scale(.85) translateY(-10%); */
+    /* transform: scale(.8) translate(-10%,-10%); */
+    position: absolute;
+    top: 75px;
+    right: 0;
+    padding: 9px 16px;
+    border-radius: 3px;
+    background-clip: padding-box;
+    background-color: #000;
+    box-shadow: 7px 7px 12px #666;
+    transition: all .25s cubic-bezier(.24,.22,.015,1.56),opacity .1s ease-in-out;
+    z-index: 5;
+    text-align: left;
+    /* pointer-events: none; */
+}
+
+.dir_logo_prod, .dir_logo_prod_header {
     background: rgba(0, 0, 0, 0) url("../images/logo/LOGO_MEDIA.svg") no-repeat scroll center center / contain ;
+}
+.dir_logo_wedd, .dir_logo_wedd_header {
+    background: rgba(0, 0, 0, 0) url("../images/logo/LOGO_E_and_W.svg") no-repeat scroll center center / contain ;
+}
+.dir_logo_prod_header {
     left: 95px;
 }
-.dir_logo_wedd {
-    background: rgba(0, 0, 0, 0) url("../images/logo/LOGO_E_and_W.svg") no-repeat scroll center center / contain ;
+.dir_logo_wedd_header {
     right: 95px;
 }
-.dir_logo{
-    bottom: 5vh;
-    height: 15vh;
-    position: absolute;
-    right: 5vh;
-    width: 15vh;
+.dir_logo {
 }
 
 .mobile_directions {    
@@ -1156,6 +1185,59 @@ left: -20px;
     color: gray;
     font-size: 18px;
     margin: 22px 0 14px;
+}
+.sitemap_area {
+    background-color: #f1f1f1;
+    padding: 1em 6em;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;
+}
+.speccards_area {
+    height: 1100px;
+    background-color: rgba(0,0,0,.05);
+    padding: 3em 6em;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;
+}
+.promo-cards {
+    float: left;
+    height: 200px;
+}
+.promo-cards span {
+    font-size: 1.9em;
+    color: #000;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+.sitemap_area a {
+    color: black;
+    font-size: 18px;
+}
+.sitemap_area a:hover {
+    color: #25262a;
+}
+.card-img {
+    float: left;
+    height: 255px;
+}
+.promoblock_left,
+.promoblock_right {
+    clear: both;
+    margin-bottom: 1.5em;
+    display: block;
+    background-color: lightgray;
+    border-bottom: 8px solid white;
+    box-shadow: 5px 15px 35px 0px rgb(160,160,160);{
+}
+}
+.promoblock_left {
+    padding: 15px 30px 15px 15px;
+    float: left;
+}
+.promoblock_right {
+    padding: 15px 30px 15px 15px;
+    float: right;
 }
 .about address {
     height: 100%;

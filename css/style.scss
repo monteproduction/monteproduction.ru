@@ -734,7 +734,7 @@ ul {
 }
 
 .related {
-	margin-top: 50px;
+	margin: 50px;
 	text-align: center;
 
 	.related-header {
@@ -751,7 +751,7 @@ ul {
 		}
 
 		a:hover {
-			color: $dark-blue;
+			text-decoration: none;
 		}
 	}
 
@@ -765,11 +765,11 @@ ul {
 		}
 
 		a {
-			color: $white;
+			color: $darker;
 		}
 
 		a:hover {
-			color: $light;
+			text-decoration: none;
 		}
 	}
 
@@ -880,10 +880,8 @@ ul {
 }
 
 .dropdown-menu {
-	background-color: $light-blue;
 	color: $white;
 	> li > a {
-		background-color: $light-blue;
 		color: $white;
 		&:hover {
 			background-color: $dark-blue;
