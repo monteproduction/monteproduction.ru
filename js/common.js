@@ -4,7 +4,7 @@
  $(document).ready(function() {
     
     var $topMenu = $("#animate");
-    var $TopLinks = $(".top-links, #logo, .dots, #header-search-button");
+    var $TopLinks = $("#nav-line");
 
     // Init ScrollMagic Controller
     var scrollMagicController = new ScrollMagic.Controller();
@@ -25,11 +25,10 @@
         var tl = new TimelineLite();
 
         tl  .add("twoo",        d)
-            .to("#animate", d, { backgroundColor: "rgba(0,0,0,.6)" })
-            .to(".dir_logo_prod_header, .dir_logo_wedd_header", d, {autoAlpha:0}, "twoo")
-            .to(".dots, #header-search-button", d, {autoAlpha:1}, "twoo")
-            .to($topMenu,       d, {y:-35}, "twoo")
-            .to($TopLinks,      d, {top:18}, "twoo");
+            .to("#animate", d, { backgroundColor: "rgba(0,0,0,.6)" },   "twoo")
+            .to(".dots, #header-search-button", d, {autoAlpha:1},       "twoo")
+            .to($topMenu,       d, {y:-35},                             "twoo")
+            .to($TopLinks,      d, { padding: "15px 0 0 0" },           "twoo");
 
         return tl;
 
@@ -46,19 +45,19 @@
             $( this ).css( "background-color", "rgba(0,0,0,.6)" );
 
         });
-        
-    $(".dropdown-toggle").dropdown();
+
+    $( ".dropdown-toggle" ).dropdown();
+    $( "#header-search-button" ).off("click").click( 
+        function() {
+            $( "#search-input" ).fadeTo( 200, 1, );
+            $( "#search-input" ).focus();
+        });
  });
 
  
-        // *************** Main page effects *************** //
+        //               Main page effects                //
 
 $(function(){
-
-// $("#header-search-button").off("click").click(function(){$(this).hasClass("btn-primary")?($(this).removeClass("btn-primary");
-// $("#header-search-button").removeClass("btn-primary");
-// $("#header-search-button").dblclick(function(){$(this).hasClass("open")||$(this).closest("form").submit()});
-// $("#header-search-button").click()});
 
     $("figure").hover(
 
@@ -76,7 +75,7 @@ $(function(){
 	return false;
 });
 
-// FOTOBLOCKs owl carousels
+        //               FOTOBLOCKs owl carousels               // 
 
 $(function(){
 

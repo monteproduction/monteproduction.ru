@@ -1,62 +1,51 @@
-<header id="animate">
-<div class="container">
-  <nav class="menu_main">
-    <div class="dir_logo_prod_header hidden-xs hidden-sm"> </div>
+  
+<nav class="menu_main navbar-fixed-top" id="animate">
+  <div class="container-fluid">
+    <ul class="col-xs-12" id="nav-line">
+        <li class="top-links col-xs-2">        
+            <form>
+                <input type="search" id="search-input" placeholder="Например: Праздник или Декор...">
+                <div class="btn" id="header-search-button">
+                    <i class="fa fa-search"></i>
+                </div>
+                <div class="content-panel">
+                    <ul id="results-container">
 
-    <form class="btn" id="header-search-button">
-      <i class="fa fa-search"></i>
-      <input type="search" id="search-input" placeholder="Искать">
-      <div class="col-md-3 content-panel articles">
-        <ul id="results-container"></ul>
-      </div>
-    </form>
-    <div class="hidden-xs  	hidden-sm 	col-md-12 					col-lg-12  					fix-top" >&nbsp;</div>
-    <div class="
-      col-xs-12 	
-      col-sm-12 	
-      col-md-2          
-      col-md-offset-2 
-      col-lg-2 
-      col-lg-offset-1 	
-      top-links">
-        <a href="{{ site.baseurl }}/about/">О Нас</a>
-    </div>
-    <div class=" 	col-xs-12 	col-sm-12 	col-md-4					col-lg-6" id="logo">
-      {% if page.layout != 'mainpage' %}
-      <a href="{{ site.url }}">
-      {% endif %}
-        <img src="{{ site.baseurl }}/images/logo/Monte_LOGO_WHITE.svg" class=""  style="width: 275px;" alt="{{ site.title }}">
-      {% if page.layout != 'mainpage' %}
-      </a>
-      {% endif %}
-    </div>
-    <div class=" 	
-      col-xs-12 	
-      col-sm-12 	
-      col-md-2 					
-      col-lg-2 
-      top-links">
-        <a href="{{ site.baseurl }}/contacts/">Контакты</a>
-    </div>
-    <button class="dots dropdown">  
-      <div class="dropdown-toggle" type="button" data-toggle="dropdown">
-        <svg class="dots-size" version="1.1" viewBox="0 0 32 32" width="32" height="32" aria-hidden="false">
-          <path d="M7 15.5c0 1.9-1.6 3.5-3.5 3.5s-3.5-1.6-3.5-3.5 1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5zm21.5-3.5c-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5 3.5-1.6 3.5-3.5-1.6-3.5-3.5-3.5zm-12.5 0c-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5 3.5-1.6 3.5-3.5-1.6-3.5-3.5-3.5z">
-          </path>
-        </svg>
-        <!--<span class="caret"></span> -->
-      </div>
-    </button>
-    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-      <li><a role="menuitem" tabindex="-1" href="/special">Специальные предложения</a></li>
-      <li><a role="menuitem" tabindex="-1" href="/events">События</a></li>
-      <li><a role="menuitem" tabindex="-1" href="https://instagram.com/monte_wedding_and_event/" target="_blank">Новости Instagramm</a></li>
-      <li><a role="menuitem" tabindex="-1" href="#">Теги</a></li>
-      <li class="divider"></li>
-      <li><a role="menuitem" tabindex="-1" href="/sitemap">Карта сайта</a></li>
-      <li><a role="menuitem" tabindex="-1" href="/search">Поиск</a></li>
+                    </ul>
+                </div>
+            </form>
+        </li>
+        <li class="top-links col-xs-2"><a href="{{ site.baseurl }}/about/">О Нас</a></li>
+        <li class="top-links logo col-md-4">            
+            {% if page.layout != 'mainpage' %}
+            <!-- <a href="{{ site.url }}"> -->
+            <a href="https://monteproduction.github.io/">
+                {% endif %}
+                    <img src="{{ site.baseurl }}/images/logo/Monte_LOGO_WHITE.svg" class=""  style="width: 275px;" alt="{{ site.title }}">
+                {% if page.layout != 'mainpage' %}
+            </a>
+            {% endif %}
+        </li>
+        <li class="top-links col-xs-2"><a href="{{ site.baseurl }}/contacts/">Контакты</a></li>
+        <li class="top-links col-xs-2">
+            <div class="dots dropdown">
+                <button class="dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+                    <svg class="dots-size" version="1.1" viewBox="0 0 32 32" width="32" height="32" aria-hidden="false">
+                        <path d="M7 15.5c0 1.9-1.6 3.5-3.5 3.5s-3.5-1.6-3.5-3.5 1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5zm21.5-3.5c-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5 3.5-1.6 3.5-3.5-1.6-3.5-3.5-3.5zm-12.5 0c-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5 3.5-1.6 3.5-3.5-1.6-3.5-3.5-3.5z">
+                        </path>
+                    </svg>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                    <li><a class="submenu_link" href="/special">Специальные предложения</a></li>
+                    <li><a class="submenu_link" href="/events">События</a></li>
+                    <li><a class="submenu_link" href="https://instagram.com/monte_wedding_and_event/" target="_blank">Новости Instagramm</a></li>
+                    <li><a class="submenu_link" href="#">Теги</a></li>
+                    <li class="divider"></li>
+                    <li><a class="submenu_link" href="/sitemap">Карта сайта</a></li>
+                    <li><a class="submenu_link" href="/search">Поиск</a></li>
+                </ul>
+            </div>   
+        </li>
     </ul>
-    <div class="dir_logo_wedd_header hidden-xs hidden-sm"> </div>
-  </nav>
-</div>
-</header>
+  </div>
+</nav>
