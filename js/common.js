@@ -49,9 +49,14 @@
     $( ".dropdown-toggle" ).dropdown();
     $( "#header-search-button" ).off("click").click( 
         function() {
-            $( "#search-input" ).fadeTo( 200, 1, );
-            $( "#search-input" ).focus();
-        });
+            
+            if ($( "#search-input" ).css("opacity") == "0") {
+                $( "#search-input" ).fadeTo( 200, 1, );
+                $( "#search-input" ).focus();
+            } else {
+                $( "#search-input" ).fadeTo( 200, 0, );
+        }; 
+    });
  });
 
  

@@ -227,6 +227,7 @@ header {
 }
 .page-content {
     min-height: 100vh;
+    background-color: lightgray;
 }
 footer {
     background-color: black;
@@ -265,7 +266,6 @@ footer .klimov {
     z-index: 2;
     color: black;
     opacity: 0;
-    left: 125px;
 }
 .visible-effect {
     opacity: 1;
@@ -297,15 +297,19 @@ footer .klimov {
     top: 9px;
     padding-top: 32px;
 }
+.top-links a {
+    position: relative;
+}
 .top-links a:hover {
     color: white;
+    /* opacity: 1; */
 }
 .top-links form {
     position: static;
-    margin-top: -8px;
+    margin-top: -10px;
 }
 .logo {
-    padding: 20px 5px 0;
+    padding: 21px 5px 0;
 }
 .logo a {
     font-family: helveticaneuecyrroman,sans-serif;
@@ -328,8 +332,7 @@ nav.reduced {
 .dir_logo_prod, 
 .dir_logo_wedd,
 .dir_logo_prod_header,
-.dir_logo_wedd_header,
-.dots {
+.dir_logo_wedd_header {
     top: 10px;
     width: 70px;
     height: 70px;
@@ -359,16 +362,19 @@ nav.reduced {
     background-color: transparent;
     border: 0px solid;
 }
+.dropdown-menu {
+    padding: 10px 0!important;
+}
 .dropdown-menu>li>a {
     color: white!important;
 }
-#header-search-button, #search-input, .content-panel {
+#header-search-button, #search-input, .search-result-panel {
     position: absolute;
+    left: 100px;
 }
 #header-search-button {
     z-index: 3;
-    left: 125px;
-    padding: 6px 6px 6px 12px;
+    padding: 8px 12px;
     color: rgb(225,225,225);
 }
 .dots ul {
@@ -382,11 +388,12 @@ nav.reduced {
     /* transform: scale(.85) translateY(-10%); */
     /* transform: scale(.8) translate(-10%,-10%); */
     position: absolute;
+    border: 0px solid;
     top: 45px;
     right: 80px;
     background-clip: padding-box;
     background-color: #000;
-    box-shadow: 7px 7px 12px #666;
+    box-shadow: 7px 7px 26px #333;
     transition: all .25s cubic-bezier(.24,.22,.015,1.56),opacity .1s ease-in-out;
     z-index: 5;
     text-align: left;
@@ -425,7 +432,7 @@ nav.reduced {
     text-decoration: none;
     white-space: nowrap;
 }
-.mobile_directions a:hover, .top-links a:hover {
+.mobile_directions a:hover {
     opacity: 1;
 }
 
@@ -979,7 +986,21 @@ button.close-small {
     padding: 10px 0 12px;
     text-align: justify;
 }
-
+.content-panel {
+    width: auto;
+    background-color: white;
+    z-index: 1000;
+    float: left;
+    min-width: 160px;
+    padding: 0;
+    margin: 2px 0 0;
+    list-style: none;
+    font-size: 14px;
+    border: 0px solid;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    background-clip: padding-box;
+}
 .about-block li {
     font-size: 22px;
     letter-spacing: 1px;
@@ -1293,7 +1314,8 @@ left: -20px;
     line-height: 48px;
     margin: 0 auto;
     text-transform: none;
-    width: 240px;
+    text-decoration: underline;
+    width: 240px;                                                                                                
 }
 address div {
     padding: 10px 0;
@@ -1508,8 +1530,7 @@ address div {
 .menu_main ul {
     padding: 0px;
 } 
-.content-panel {
-    left: 125px;
+.search-result-panel {
     top: 60px;
     width: auto;
     background-color: white;
