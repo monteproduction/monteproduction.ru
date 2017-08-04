@@ -41,18 +41,14 @@
 
             if (direction == "to") {
                 tl.add("one",  .2)
-                tl.to("#logomonte", .2, {y:2}, "one")
                 tl.to("#tri", .2, {y:1, opacity: 1}, "one")
-                tl.to(".directions_dropdown", .1, {y:360, opacity: 1, height: 300}, "one")
-                tl.to("#logomonte", .2, {height:50})
-                tl.to($dropdownLogos, .2, {opacity: 1})
+                tl.to(".directions_dropdown", .1, { opacity: 1, height: 400, bacgroundColor: "rgba(0,0,0,.8)"}, "one")
+                tl.to($dropdownLogos, .3, {opacity: 1, display: "block"}, "one")
             } else if (direction = "reverse") {
-                tl.to("#logomonte", .2, {height:100})
                 tl.add("one",  .2)
-                tl.to(".directions_dropdown", .1, {y:0, opacity: 0, height: 0}, "one")
+                tl.to(".directions_dropdown", .1, { opacity: 0, height: 0, bacgroundColor: "rgba(0,0,0,.3)" }, "one")
                 tl.to("#tri", .2, {y:0, opacity: 0}, "one")
-                tl.to("#logomonte", .2, {y:0}, "one")
-                tl.to($dropdownLogos, .4, {opacity: 0})
+                tl.to($dropdownLogos, .1, {opacity: 0, display: "none"}, "one")
             }
 
         return tl;
@@ -64,12 +60,10 @@
         function() {
 
             LogoAnimate("to");
-            // $( this ).css( "background-color", "rgba(0,0,0,1)" );
 
         }, function() {
             
             LogoAnimate("reverse");
-            // $( this ).css( "background-color", "rgba(0,0,0,.6)" );
 
         });
 
@@ -84,6 +78,29 @@
                 $( "#search-input" ).fadeTo( 200, 0, );
         }; 
     });
+
+        $( "#animate" ).hover(
+
+            function() {
+
+                $( "#animate" ).css( "background-color", "rgba(0,0,0, 1)" );
+
+            }, function() {
+                
+                $( this ).css( "background-color", "rgba(0,0,0,.6)" );
+
+        });
+        $( "#animate2" ).hover(
+
+            function() {
+                
+                $( ".directions_dropdown" ).fadeTo(200, 1, );
+
+            }, function() {
+                
+                $( ".directions_dropdown" ).fadeTo(200, 0, );
+
+        });
  });
 
  
