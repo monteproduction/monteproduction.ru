@@ -2,7 +2,7 @@
 <nav class="menu_main navbar-fixed-top" id="animate">
 <div class="container-fluid">
     <ul class="col-xs-12" id="nav-line">
-        <li class="top-links col-xs-2">        
+        <li class="top-links col-xs-2 hidden-xs hidden-sm">        
             <form>
                 <input type="search" id="search-input" placeholder="Например: Праздник или Декор...">
                 <div class="btn" id="header-search-button">
@@ -25,7 +25,7 @@
                     <img src="{{ site.baseurl }}/images/logo/Monte_LOGO_WHITE.svg" class=""  style="width: 275px;" alt="{{ site.title }}">
             {% if page.layout != 'mainpage' %}
                 </a>
-                <div class="directions_dropdown">
+                <div class="directions_dropdown hidden-xs hidden-sm">
                     <div class="triangle" id="tri"></div>
                     <a class="dir_logo_prod_header" href="/video/"> </a>
                     <a class="dir_logo_event_header" href="/event/"><img src="/images/l8d3.png"></a>
@@ -35,7 +35,7 @@
             </div>
         </li>
         <li class="top-links col-xs-2"><a href="{{ site.baseurl }}/contacts/">Контакты</a></li>
-        <li class="top-links col-xs-2">
+        <li class="top-links col-xs-2 hidden-xs hidden-sm">
             <div class="dots dropdown">
                 <button class="dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
                     <svg class="dots-size" version="1.1" viewBox="0 0 32 32" width="32" height="32" aria-hidden="false">
