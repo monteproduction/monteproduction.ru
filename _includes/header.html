@@ -16,15 +16,23 @@
             </form>
         </li>
         <li class="top-links col-xs-2"><a href="{{ site.baseurl }}/about/">О Нас</a></li>
-        <li class="top-links logo col-md-4">            
+        <li class="top-links col-md-4" id="logomonte">    
+            <div id="animate2">       
             {% if page.layout != 'mainpage' %}
-            <!-- <a href="{{ site.url }}"> -->
-            <a href="https://monteproduction.github.io/">
-                {% endif %}
-                    <img src="{{ site.baseurl }}/images/logo/Monte_LOGO_WHITE.svg" class=""  style="width: 275px;" alt="{{ site.title }}">
-                {% if page.layout != 'mainpage' %}
-            </a>
+                <!-- <a href="{{ site.url }}"> -->
+                <a href="https://monteproduction.github.io/">
             {% endif %}
+                    <img src="{{ site.baseurl }}/images/logo/Monte_LOGO_WHITE.svg" class=""  style="width: 275px;" alt="{{ site.title }}">
+            {% if page.layout != 'mainpage' %}
+                </a>
+                <div class="directions_dropdown">
+                    <div class="triangle" id="tri"></div>
+                    <a class="dir_logo_prod_header" href="/video/"> </a>
+                    <a class="dir_logo_event_header" href="/event/"><img src="/images/l8d3.png"></a>
+                    <a class="dir_logo_wedd_header" href="/wedding/"> </a>
+                </div>
+            {% endif %}
+            </div>
         </li>
         <li class="top-links col-xs-2"><a href="{{ site.baseurl }}/contacts/">Контакты</a></li>
         <li class="top-links col-xs-2">

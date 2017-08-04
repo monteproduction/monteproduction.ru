@@ -252,7 +252,7 @@ footer .klimov {
 .font-fantasy {
     font-family: Arial, Helvetica, sans-serif;
 }
-#logo {
+#logomonte {
     margin-top: 0px;
 }
 .margined-13 {
@@ -271,34 +271,9 @@ footer .klimov {
     opacity: 1;
     visibility: visible;
 }
-.menu_main {
-    height: 100px;
-    margin: 0px;
-    text-align: center;
-}
-.menu_main a {
-    opacity: 0.88;
-    display: block;
-    transition: all 0.2s ease-out 0s;
-    color: #fff;
-    font-family: "PT Sans",sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: normal;
-    letter-spacing: 3px;
-    padding: 0;
-    text-decoration: none;
-    text-transform: uppercase;
-    text-decoration: none;
-    line-height: 30px;
-    font: 400 15px 'PT Sans', sans-serif;
-}
 .top-links {
     top: 9px;
     padding-top: 32px;
-}
-.top-links a {
-    position: relative;
 }
 .top-links a:hover {
     color: white;
@@ -308,12 +283,37 @@ footer .klimov {
     position: static;
     margin-top: -10px;
 }
-.logo {
+#logomonte {
     padding: 21px 5px 0;
+    height: 100px;
 }
-.logo a {
+#logomonte a {
     font-family: helveticaneuecyrroman,sans-serif;
     font-size: 21px;
+}
+.triangle {
+    padding: 10px;
+    background: url(../images/triangle-down-white.png) no-repeat center 5px transparent;
+    height: 41px;
+    opacity: 0;
+}
+#tri {
+    top: -50px;
+}
+#animate2 {
+    position: relative;
+    height: 100px;
+}
+.directions_dropdown {
+    border-radius: 5px;
+    height: 300px;
+    width: 650px;
+    background-color: rgba(0,0,0,.3);
+    position: absolute;
+    top: -300px;
+    left: calc(50% - 323px);
+    margin: 0 auto;
+    opacity: 0;
 }
 nav {
     backface-visibility: hidden;
@@ -329,14 +329,14 @@ nav.reduced {
 .main_directions {
     overflow: hidden;
 }
-.dir_logo_prod, 
-.dir_logo_wedd,
 .dir_logo_prod_header,
+.dir_logo_event_header,
 .dir_logo_wedd_header {
-    top: 10px;
-    width: 70px;
-    height: 70px;
-    position: absolute;    
+    float: left;
+    width: 33%;
+    min-height: 140px;
+    opacity: 0;
+    margin: 40px 0px;
 }
 .dots {
     top: 0px;
@@ -406,14 +406,12 @@ nav.reduced {
     background: rgba(0, 0, 0, 0) url("../images/logo/LOGO_E_and_W.svg") no-repeat scroll center center / contain ;
 }
 .dir_logo_prod_header {
-    opacity: 0;
     left: 95px;
 }
-.dir_logo_wedd_header {
-    opacity: 0;
-    right: 95px;
+.dir_logo_event_header {
 }
-.dir_logo {
+.dir_logo_wedd_header {
+    right: 95px;
 }
 
 .mobile_directions {    
@@ -1197,6 +1195,7 @@ left: -20px;
     top: 0; bottom: 0;
     margin: 0 auto;
     width: 200px;
+    position: absolute;
 }
 .about .dir_logo_prod {
     right: 50%;
@@ -1314,7 +1313,7 @@ left: -20px;
     line-height: 48px;
     margin: 0 auto;
     text-transform: none;
-    text-decoration: underline;
+    text-decoration: underline!important;
     width: 240px;                                                                                                
 }
 address div {
@@ -1405,6 +1404,7 @@ address div {
 /* menu fix */
 .fix {
     height: 100px;
+    background-color: black;
 }
 .fixmob {
     height: 19px;
@@ -1496,7 +1496,7 @@ address div {
 	width: 100%;
 }
 
-#depreload .logo {
+#depreload #logo {
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -1526,10 +1526,30 @@ address div {
 }
 .menu_main {
     background-color: black;
+    height: 100px;
+    margin: 0px;
+    text-align: center;
 } 
 .menu_main ul {
     padding: 0px;
-} 
+}   
+.menu_main a {
+    opacity: 0.88;
+    display: block;
+    transition: all 0.2s ease-out 0s;
+    color: #fff;
+    font-family: "PT Sans",sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 3px;
+    padding: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 30px;
+    font: 400 15px 'PT Sans', sans-serif;
+}
 .search-result-panel {
     top: 60px;
     width: auto;

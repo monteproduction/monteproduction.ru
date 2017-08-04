@@ -5,6 +5,7 @@
     
     var $topMenu = $("#animate");
     var $TopLinks = $("#nav-line");
+    var $dropdownLogos = $(".dir_logo_prod_header, .dir_logo_event_header, .dir_logo_wedd_header")
 
     // Init ScrollMagic Controller
     var scrollMagicController = new ScrollMagic.Controller();
@@ -33,16 +34,42 @@
         return tl;
 
     }
+    
+    function LogoAnimate(direction) {
 
-    $( "#animate" ).hover(
+        var tl = new TimelineLite()
+
+            if (direction == "to") {
+                tl.add("one",  .2)
+                tl.to("#logomonte", .2, {y:2}, "one")
+                tl.to("#tri", .2, {y:1, opacity: 1}, "one")
+                tl.to(".directions_dropdown", .1, {y:360, opacity: 1, height: 300}, "one")
+                tl.to("#logomonte", .2, {height:50})
+                tl.to($dropdownLogos, .2, {opacity: 1})
+            } else if (direction = "reverse") {
+                tl.to("#logomonte", .2, {height:100})
+                tl.add("one",  .2)
+                tl.to(".directions_dropdown", .1, {y:0, opacity: 0, height: 0}, "one")
+                tl.to("#tri", .2, {y:0, opacity: 0}, "one")
+                tl.to("#logomonte", .2, {y:0}, "one")
+                tl.to($dropdownLogos, .4, {opacity: 0})
+            }
+
+        return tl;
+
+    }
+
+    $( "#animate2" ).hover(
 
         function() {
 
-            $( this ).css( "background-color", "rgba(0,0,0,1)" );
+            LogoAnimate("to");
+            // $( this ).css( "background-color", "rgba(0,0,0,1)" );
 
         }, function() {
             
-            $( this ).css( "background-color", "rgba(0,0,0,.6)" );
+            LogoAnimate("reverse");
+            // $( this ).css( "background-color", "rgba(0,0,0,.6)" );
 
         });
 
