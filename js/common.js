@@ -41,13 +41,13 @@
 
             if (direction == "to") {
                 tl.add("one",  .2)
-                tl.to("#tri", .2, {y:1, opacity: 1}, "one")
-                tl.to(".directions_dropdown", .1, { opacity: 1, height: 400, bacgroundColor: "rgba(0,0,0,.8)"}, "one")
+                tl.to("#tri", .1, {opacity: 1, height: 40}, "one")
+                tl.to(".directions_dropdown", .5, { opacity: 1, height: 400, bacgroundColor: "rgba(0,0,0,.8)"}, "one")
                 tl.to($dropdownLogos, .3, {opacity: 1, display: "block"}, "one")
             } else if (direction = "reverse") {
                 tl.add("one",  .2)
                 tl.to(".directions_dropdown", .1, { opacity: 0, height: 0, bacgroundColor: "rgba(0,0,0,.3)" }, "one")
-                tl.to("#tri", .2, {y:0, opacity: 0}, "one")
+                tl.to("#tri", .2, {opacity: 0, height: 0}, "one")
                 tl.to($dropdownLogos, .1, {opacity: 0, display: "none"}, "one")
             }
 
@@ -55,7 +55,7 @@
 
     }
 
-    $( "#animate2" ).hover(
+    $( "#animate2" ).off("hover").hover(
 
         function() {
 
@@ -65,9 +65,8 @@
             
             LogoAnimate("reverse");
 
-        });
+    });
 
-    $( ".dropdown-toggle" ).dropdown();
     $( "#header-search-button" ).off("click").click( 
         function() {
             
@@ -79,28 +78,20 @@
         }; 
     });
 
-        $( "#animate" ).hover(
+    $( "#animate" ).off("hover").hover(
 
-            function() {
+        function() {
 
-                $( "#animate" ).css( "background-color", "rgba(0,0,0, 1)" );
+            $( "#animate" ).css( "background-color", "rgba(0,0,0, 1)" );
 
-            }, function() {
-                
-                $( this ).css( "background-color", "rgba(0,0,0,.6)" );
+        }, function() {
+            
+            $( this ).css( "background-color", "rgba(0,0,0,.6)" );
 
-        });
-        $( "#animate2" ).hover(
+    });
 
-            function() {
-                
-                $( ".directions_dropdown" ).fadeTo(200, 1, );
+    $( ".dropdown-toggle" ).dropdown();
 
-            }, function() {
-                
-                $( ".directions_dropdown" ).fadeTo(200, 0, );
-
-        });
  });
 
  

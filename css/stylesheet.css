@@ -294,14 +294,14 @@ footer .klimov {
     font-family: helveticaneuecyrroman,sans-serif;
     font-size: 21px;
 }
-.triangle {
-    padding: 0px;
-    background: url(../images/triangle-down-white.png) no-repeat center 5px transparent;
-    height: 0px;
-    opacity: 0;
-}
 #tri {
-    top: -50px;
+    position: absolute;
+    top: -30px;
+    padding: 0px;
+    background: url(../images/triangle-down-white.svg) no-repeat top center transparent;
+        background-size: 55px;
+    height: 0px; width: 100%;
+    opacity: 0;
 }
 #animate2 {
     position: relative;
@@ -309,7 +309,7 @@ footer .klimov {
 }
 .directions_dropdown {
     border-radius: 0 0 5px 5px;
-    height: 0px;
+    height: 600px;
     width: 1000px;
     background-color: rgba(0,0,0,.9);
     position: absolute;
@@ -340,7 +340,7 @@ nav.reduced {
     height: 215px;
     opacity: 0;
     display: none;
-    margin: 10px 142px 85px!important;
+    margin: 70px 142px 85px !important;
 }
 .dots {
     top: 0px;
@@ -378,7 +378,7 @@ nav.reduced {
 }
 #header-search-button {
     z-index: 3;
-    padding: 8px 12px;
+    padding: 9px 12px;
     color: rgb(225,225,225);
 }
 .dots ul {
@@ -411,8 +411,6 @@ nav.reduced {
 }
 .dir_logo_prod_header {
     left: 95px;
-}
-.dir_logo_event_header {
 }
 .dir_logo_wedd_header {
     right: 95px;
@@ -1274,8 +1272,7 @@ left: -20px;
     display: block;
     background-color: lightgray;
     border-bottom: 8px solid white;
-    box-shadow: 5px 15px 35px 0px rgb(160,160,160);{
-}
+    box-shadow: 5px 15px 35px 0px rgb(160,160,160);
 }
 .promoblock_left {
     padding: 15px 30px 15px 15px;
