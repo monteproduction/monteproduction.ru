@@ -5,7 +5,7 @@
     
     var $topMenu = $("#animate");
     var $TopLinks = $("#nav-line");
-    var $dropdownLogos = $(".dir_logo_prod_header, .dir_logo_event_header, .dir_logo_wedd_header")
+    var $dropdownLogos = $(".dir_logo_prod_header, .dir_logo_event_header, .dir_logo_wedd_header");
 
     // Init ScrollMagic Controller
     var scrollMagicController = new ScrollMagic.Controller();
@@ -13,23 +13,26 @@
     var animateTopMenu = TopMenuTl.add(TopShade(.1, "scene"), 0);
 
     // Trigger scene
-    new ScrollMagic.Scene({
-                    offset: 50,
+    var scene = new ScrollMagic.Scene({
+                    offset: 0,
                     triggerElement: "#menu_animate",
                     triggerHook: "onLeave"
                 })
-                            .setTween(animateTopMenu)
-                            .addTo(scrollMagicController);
+
+    scene
+        .setTween(animateTopMenu)
+        .addTo(scrollMagicController);
 
     function TopShade(d, direction) {
 
         var tl = new TimelineLite();
 
         tl  .add("twoo",        d)
-            .to("#animate",     d, { backgroundColor: "rgba(0,0,0,.6)" },   "twoo")
-            .to(".dots, #header-search-button", d, { autoAlpha:1 },       "twoo")
-            .to($TopLinks,      d, { padding: "15px 0 0 0" },           "twoo")
-            .to($topMenu,       d, { y:-35 },                             "twoo");
+            .to("#animate",     d, { backgroundColor: "rgba(0,0,0,.6)" },   "twoo" )
+            .to($TopLinks,      d, { padding: "15px 0 0 0" },           "twoo" )
+            .to($topMenu,       d, { y:-35 },                             "twoo" )
+                .to($dropdownLogos,                 d, { autoAlpha:0 }, "twoo" )
+                .to(".dots, #header-search-button", d, { autoAlpha:1 }, "twoo" );
 
         return tl;
 
@@ -38,24 +41,31 @@
     function LogoAnimate(direction) {
 
         var tl = new TimelineLite()
+        var $topOffset = $(window).scrollTop();
+
+        if ($topOffset == 0) {
+            
+            console.log($topOffset);
 
             if (direction == "to") {
-                tl.add("one",  .2)
-                tl.to(".directions_dropdown",   .5, { opacity: 1, height: 400, bacgroundColor: "rgba(0,0,0,.8)" }, "one")
-                tl.to($dropdownLogos,           .3, { opacity: 1, display: "block" }, "one")
-                tl.to("#tri",                   .1, { y:20, opacity: 1, height: 40 })
+
+                tl.to($dropdownLogos,           0.3, { autoAlpha:0 })
+                .to(".dots, #header-search-button", 0.3, { autoAlpha:1 } )
+
             } else if (direction = "reverse") {
-                tl.add("one",  0)
-                tl.to(".directions_dropdown",   0, { opacity: 0, height: 0, bacgroundColor: "rgba(0,0,0,.3)" }, "one")
-                tl.to("#tri",                   0, { y:0, opacity: 0, height: 0 }, "one")
-                tl.to($dropdownLogos,           0, { opacity: 0, display: "none" }, "one")
+
+                tl.to(".dots, #header-search-button, #search-input", 0.3, { autoAlpha:0 } )
+                .to($dropdownLogos,          0.3, { autoAlpha:1})
+                
             }
+            
+        }
 
         return tl;
 
     }
 
-    $( "#animate2" ).off("hover").hover(
+    $( "#animate" ).off("hover").hover(
 
         function() {
 

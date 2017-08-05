@@ -333,18 +333,19 @@ nav.reduced {
     overflow: hidden;
 }
 .dir_logo_prod_header,
-.dir_logo_event_header,
+/* .dir_logo_event_header, */
 .dir_logo_wedd_header {
     float: left;
-    width: 215px;
-    height: 215px;
-    opacity: 0;
-    display: none;
-    margin: 70px 142px 85px !important;
+    width: 80px;
+    height: 80px;
+    opacity: 1;
+    position: absolute;
+    left: calc(50% - 40px);
+    top: 0px;
 }
 .dots {
     top: 0px;
-    opacity: 1;
+    opacity: 0;
     transition: all .2s ease-in-out;
     line-height: 1;
     width: auto;
@@ -378,6 +379,7 @@ nav.reduced {
 }
 #header-search-button {
     z-index: 3;
+    opacity: 0; 
     padding: 9px 12px;
     color: rgb(225,225,225);
 }
@@ -408,12 +410,6 @@ nav.reduced {
 }
 .dir_logo_wedd, .dir_logo_wedd_header {
     background: rgba(0, 0, 0, 0) url("../images/logo/LOGO_E_and_W.svg") no-repeat scroll center center / contain ;
-}
-.dir_logo_prod_header {
-    left: 95px;
-}
-.dir_logo_wedd_header {
-    right: 95px;
 }
 .mobile_directions {    
     padding: 0;
