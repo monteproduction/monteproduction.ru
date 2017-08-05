@@ -17,19 +17,19 @@
                     offset: 50,
                     triggerElement: "#menu_animate",
                     triggerHook: "onLeave"
-                })
-                            .setTween(animateTopMenu)
-                            .addTo(scrollMagicController);
+                    })
+                    .setTween(animateTopMenu)
+                    .addTo(scrollMagicController);
 
     function TopShade(d, direction) {
 
         var tl = new TimelineLite();
 
         tl  .add("twoo",        d)
-            .to("#animate",     d, { backgroundColor: "rgba(0,0,0,.6)" },   "twoo")
-            .to(".dots, #header-search-button", d, { autoAlpha:1 },       "twoo")
-            .to($TopLinks,      d, { padding: "15px 0 0 0" },           "twoo")
-            .to($topMenu,       d, { y:-35 },                             "twoo");
+            .to("#animate",     d, { backgroundColor: "rgba(0,0,0,.6)" }, "twoo")
+            .to(".dots, #header-search-button", d, { autoAlpha:1 }, "twoo")
+            .to($TopLinks,      d, { padding: "15px 0 0 0" }, "twoo")
+            .to($topMenu,       d, { y:-35 }, "twoo");
 
         return tl;
 
