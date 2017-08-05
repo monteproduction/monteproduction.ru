@@ -296,7 +296,7 @@ footer .klimov {
 }
 #tri {
     position: absolute;
-    top: 0px;
+    top: -30px;
     padding: 0px;
     background: url(../images/triangle-down-white.svg) no-repeat top center transparent;
         background-size: 55px;

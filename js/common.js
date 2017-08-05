@@ -26,10 +26,10 @@
         var tl = new TimelineLite();
 
         tl  .add("twoo",        d)
-            .to("#animate", d, { backgroundColor: "rgba(0,0,0,.6)" },   "twoo")
-            .to(".dots, #header-search-button", d, {autoAlpha:1},       "twoo")
-            .to($topMenu,       d, {y:-35},                             "twoo")
-            .to($TopLinks,      d, { padding: "15px 0 0 0" },           "twoo");
+            .to("#animate",     d, { backgroundColor: "rgba(0,0,0,.6)" },   "twoo")
+            .to(".dots, #header-search-button", d, { autoAlpha:1 },       "twoo")
+            .to($TopLinks,      d, { padding: "15px 0 0 0" },           "twoo")
+            .to($topMenu,       d, { y:-35 },                             "twoo");
 
         return tl;
 
@@ -41,14 +41,14 @@
 
             if (direction == "to") {
                 tl.add("one",  .2)
-                tl.to("#tri", .1, {y:35, opacity: 1, height: 40}, "one")
-                tl.to(".directions_dropdown", .5, { opacity: 1, height: 400, bacgroundColor: "rgba(0,0,0,.8)"}, "one")
-                tl.to($dropdownLogos, .3, {opacity: 1, display: "block"}, "one")
+                tl.to(".directions_dropdown",   .5, { opacity: 1, height: 400, bacgroundColor: "rgba(0,0,0,.8)" }, "one")
+                tl.to($dropdownLogos,           .3, { opacity: 1, display: "block" }, "one")
+                tl.to("#tri",                   .1, { y:20, opacity: 1, height: 40 })
             } else if (direction = "reverse") {
-                tl.add("one",  .2)
-                tl.to(".directions_dropdown", .1, { opacity: 0, height: 0, bacgroundColor: "rgba(0,0,0,.3)" }, "one")
-                tl.to("#tri", .2, {y:0, opacity: 0, height: 0}, "one")
-                tl.to($dropdownLogos, .1, {opacity: 0, display: "none"}, "one")
+                tl.add("one",  0)
+                tl.to(".directions_dropdown",   0, { opacity: 0, height: 0, bacgroundColor: "rgba(0,0,0,.3)" }, "one")
+                tl.to("#tri",                   0, { y:0, opacity: 0, height: 0 }, "one")
+                tl.to($dropdownLogos,           0, { opacity: 0, display: "none" }, "one")
             }
 
         return tl;
