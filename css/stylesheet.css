@@ -295,9 +295,9 @@ footer .klimov {
     font-size: 21px;
 }
 .triangle {
-    padding: 10px;
+    padding: 0px;
     background: url(../images/triangle-down-white.png) no-repeat center 5px transparent;
-    height: 41px;
+    height: 0px;
     opacity: 0;
 }
 #tri {
@@ -305,7 +305,7 @@ footer .klimov {
 }
 #animate2 {
     position: relative;
-    height: 54px;
+    height: 60px;
 }
 .directions_dropdown {
     border-radius: 0 0 5px 5px;
