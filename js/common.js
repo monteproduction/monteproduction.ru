@@ -41,13 +41,13 @@
 
             if (direction == "to") {
                 tl.add("one",  .2)
-                tl.to("#tri", .1, {opacity: 1, height: 40}, "one")
+                tl.to("#tri", .1, {y:35, opacity: 1, height: 40}, "one")
                 tl.to(".directions_dropdown", .5, { opacity: 1, height: 400, bacgroundColor: "rgba(0,0,0,.8)"}, "one")
                 tl.to($dropdownLogos, .3, {opacity: 1, display: "block"}, "one")
             } else if (direction = "reverse") {
                 tl.add("one",  .2)
                 tl.to(".directions_dropdown", .1, { opacity: 0, height: 0, bacgroundColor: "rgba(0,0,0,.3)" }, "one")
-                tl.to("#tri", .2, {opacity: 0, height: 0}, "one")
+                tl.to("#tri", .2, {y:0, opacity: 0, height: 0}, "one")
                 tl.to($dropdownLogos, .1, {opacity: 0, display: "none"}, "one")
             }
 

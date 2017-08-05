@@ -296,7 +296,7 @@ footer .klimov {
 }
 #tri {
     position: absolute;
-    top: -30px;
+    top: 0px;
     padding: 0px;
     background: url(../images/triangle-down-white.svg) no-repeat top center transparent;
         background-size: 55px;
@@ -415,7 +415,6 @@ nav.reduced {
 .dir_logo_wedd_header {
     right: 95px;
 }
-
 .mobile_directions {    
     padding: 0;
     text-align: center;
