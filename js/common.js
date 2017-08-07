@@ -44,18 +44,16 @@
         var $topOffset = $(window).scrollTop();
 
         if ($topOffset == 0) {
-            
-            console.log($topOffset);
 
             if (direction == "to") {
 
-                tl.to($dropdownLogos,           0.3, { autoAlpha:0 })
-                .to(".dots, #header-search-button", 0.3, { autoAlpha:1 } )
+                tl.to($dropdownLogos,           0.1, { autoAlpha:0 })
+                .to(".dots, #header-search-button", 0.1, { autoAlpha:1 } )
 
             } else if (direction = "reverse") {
 
-                tl.to(".dots, #header-search-button, #search-input", 0.3, { autoAlpha:0 } )
-                .to($dropdownLogos,          0.3, { autoAlpha:1})
+                tl.to(".dots, #header-search-button, #search-input", 0.1, { autoAlpha:0 } )
+                .to($dropdownLogos,          0.1, { autoAlpha:1})
                 
             }
             
