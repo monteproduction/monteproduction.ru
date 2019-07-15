@@ -8,15 +8,15 @@ permalink: /event/
 <div class="event_content3">
 
 <section class="event_galery">
-            <div id="carousel-monte" class="owl-carousel owl-theme">
-                <a data-toggle="modal" href="#responsive" class="item"><div class="img_inline" style="background-image: url(../images/event/1_1.jpg)"></div></a>
-                <a data-toggle="modal" href="#responsive" class="item"><div class="img_inline" style="background-image: url(../images/event/1_2.jpg)"></div></a>
-                <a data-toggle="modal" href="#responsive" class="item"><div class="img_inline" style="background-image: url(../images/event/1_3.jpg)"></div></a>
-                <a data-toggle="modal" href="#responsive" class="item"><div class="img_inline" style="background-image: url(../images/event/1_4.JPG)"></div></a>
-                <a data-toggle="modal" href="#responsive" class="item"><div class="img_inline" style="background-image: url(../images/event/1_5.jpg)"></div></a>
-                <a data-toggle="modal" href="#responsive" class="item"><div class="img_inline" style="background-image: url(../images/event/1_6.jpg)"></div></a>
-            </div>
-    </section>
+  <div id="carousel-monte" class="owl-carousel owl-theme">
+      <a data-toggle="modal" href="#responsive" class="item"><div class="img_inline" style="background-image: url(../images/event/1_1.jpg)"></div></a>
+      <a data-toggle="modal" href="#responsive" class="item"><div class="img_inline" style="background-image: url(../images/event/1_2.jpg)"></div></a>
+      <a data-toggle="modal" href="#responsive" class="item"><div class="img_inline" style="background-image: url(../images/event/1_3.jpg)"></div></a>
+      <a data-toggle="modal" href="#responsive" class="item"><div class="img_inline" style="background-image: url(../images/event/1_4.JPG)"></div></a>
+      <a data-toggle="modal" href="#responsive" class="item"><div class="img_inline" style="background-image: url(../images/event/1_5.jpg)"></div></a>
+      <a data-toggle="modal" href="#responsive" class="item"><div class="img_inline" style="background-image: url(../images/event/1_6.jpg)"></div></a>
+  </div>
+</section>
 
 <section class="">
   <div class="container">
@@ -25,7 +25,7 @@ permalink: /event/
     </div>
   </div>
   <div class="container">
-            <h1>EVENT МЕРОПРИЯТИЯ ЛЮБОГО УРОВНЯ СЛОЖНОСТИ</h1>
+    <h1>EVENT МЕРОПРИЯТИЯ ЛЮБОГО УРОВНЯ СЛОЖНОСТИ</h1>
     <div class="about-block col-md-12 col-sm-12">
       <p>
         Полный спектр услуг по подготовке и организации праздничных, корпоративных и бизнес событий премиального уровня в Москве, России и Европе.
@@ -62,6 +62,10 @@ permalink: /event/
     {% endif %}
     {% if post.direction == 'event' %}
       {% if post.sectype == 'content' %}
+        <a class="header-link" href="#pages-and-collections" title="Permalink">
+          <span class="sr-only">Permalink</span>
+          <i class="fa fa-link"></i>
+        </a>
         <li>{{ post.title }}</li>
         {{ post.content }}
       {% elsif post.sectype == 'galery' %}

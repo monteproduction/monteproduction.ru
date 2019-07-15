@@ -40,10 +40,10 @@
         var tl = new TimelineLite()
 
             if (direction == "to") {
+                tl.to("#tri",                   .1, { y:20, opacity: 1, height: 40 })
                 tl.add("one",  .2)
                 tl.to(".directions_dropdown",   .5, { opacity: 1, height: 400, bacgroundColor: "rgba(0,0,0,.8)" }, "one")
                 tl.to($dropdownLogos,           .3, { opacity: 1, display: "block" }, "one")
-                tl.to("#tri",                   .1, { y:20, opacity: 1, height: 40 })
             } else if (direction = "reverse") {
                 tl.add("one",  0)
                 tl.to(".directions_dropdown",   0, { opacity: 0, height: 0, bacgroundColor: "rgba(0,0,0,.3)" }, "one")

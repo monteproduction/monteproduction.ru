@@ -2,7 +2,9 @@
 <nav class="menu_main navbar-fixed-top" id="animate">
 <div class="container-fluid">
     <ul class="col-xs-12" id="nav-line">
-        <li class="top-links col-xs-2 hidden-xs hidden-sm">        
+        <li class="top-links col-xs-2 hidden-xs hidden-sm">    
+            {% if page.permalink != 'search' %}    
+                {% if page.permalink != '/search/' %}    
             <form>
                 <input type="search" id="search-input" placeholder="Например: Праздник или Декор...">
                 <div class="btn" id="header-search-button">
@@ -14,6 +16,8 @@
                     </ul>
                 </div>
             </form>
+                {% endif %}
+            {% endif %}
         </li>
         <li class="top-links col-xs-2"><a href="{{ site.baseurl }}/about/">О Нас</a></li>
         <li class="top-links col-md-4" id="logomonte">    
@@ -53,6 +57,10 @@
                 </ul>
             </div>   
         </li>
+        
+        <div class="dir_logo_prod_over hidden-xs hidden-sm"> </div>
+        <div class="dir_logo_wedd_over hidden-xs hidden-sm"> </div>
+        
     </ul>
 </div>
 </nav>
