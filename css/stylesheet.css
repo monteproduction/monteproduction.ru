@@ -1560,6 +1560,20 @@ address div {
     line-height: 30px;
     font: 400 15px 'PT Sans', sans-serif;
 }
+@media screen and (max-width: 989px) {
+    .menu_main {
+        height: 177px;
+    }
+    #logomonte {
+        height: 65px;
+    }
+    .top-links {
+        padding-top: 17px;
+    }
+    .fix {
+        height: 177px;
+    }
+}
 .search-result-panel {
     top: 60px;
     width: auto;
