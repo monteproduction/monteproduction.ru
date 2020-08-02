@@ -15,18 +15,17 @@
 
                     </ul>
                 </div>
-            </form>
+            </form> 
                 {% endif %}
             {% endif %}
         </li>
-        <li class="top-links col-xs-12 col-md-2"><a href="{{ site.baseurl }}/about/">О Нас</a></li>
+        <li class="top-links col-xs-12 col-md-2"><a href="/about/">О Нас</a></li>
         <li class="top-links col-xs-12 col-md-4" id="logomonte">    
             <div id="animate2">       
             {% if page.layout != 'mainpage' %}
-                <!-- <a href="{{ site.url }}"> -->
-                <a href="{{ site.url }}">
+                <a href="{{ site.baseurl }}">
             {% endif %}
-                    <img src="{{ site.baseurl }}/images/logo/Monte_LOGO_WHITE.svg" class=""  style="width: 275px;" alt="{{ site.title }}">
+                    <img src="{{ site.baseurl }}images/logo/Monte_LOGO_WHITE.svg" class=""  style="width: 275px;" alt="{{ site.title }}">
             {% if page.layout != 'mainpage' %}
                 </a>
                 <div class="directions_dropdown hidden-xs hidden-sm">
@@ -38,7 +37,7 @@
             {% endif %}
             </div>
         </li>
-        <li class="top-links col-xs-12 col-md-2"><a href="{{ site.baseurl }}/contacts/">Контакты</a></li>
+        <li class="top-links col-xs-12 col-md-2"><a href="/contacts/">Контакты</a></li>
         <li class="top-links col-md-2 hidden-xs hidden-sm">
             <div class="dots dropdown">
                 <button class="dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">

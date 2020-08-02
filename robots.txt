@@ -1,0 +1,5 @@
+User-agent: *
+
+Disallow: /special/
+Disallow: /events
+Disallow: /404.html

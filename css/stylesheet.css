@@ -188,7 +188,7 @@ li {
 h1 {
     font-family: "PT Sans",arial;
     font-size: 32px;
-    font-weight: bold;
+    font-weight: 400;
     letter-spacing: 1px;
     line-height: 60px;
     margin: 0;
@@ -654,9 +654,6 @@ figure.effect-lily:hover p {
 	-webkit-transition-duration: 0.35s;
 	transition-duration: 0.35s;
 }
-.pswipe-galery figure {
-    margin: 0;
-}
 .scale-effect {
     transform: scale3d(1, 1, 1);
     background: rgba(255, 255, 255, 0.6) none repeat scroll 0 0;
@@ -709,7 +706,37 @@ figure.effect-lily:hover p {
 	animation-timing-function: cubic-bezier(1,0,0,.5); 
 	will-change: transform, opacity;
 }
+.zoom-out-effect2 {
+	-webkit-animation-name: zoomOut;
+	animation-name: zoomOut;
+	-webkit-animation-duration: 0.3s;
+	animation-duration: 0.3s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	animation-timing-function: cubic-bezier(1,0,0,.5); 
+	will-change: transform, opacity;
+}
 @-webkit-keyframes zoomOut {
+  0% {
+	-webkit-transform: scale3d(1.1, 1.1, 1.0);
+	transform: scale3d(1.1, 1.1, 1.0);
+  }
+  100% { 
+	-webkit-transform: scale3d(1, 1, 1.0);
+	transform: scale3d(1, 1, 1.0);
+  }
+}
+@keyframes zoomOut {
+    0% {
+      -webkit-transform: scale3d(1.1, 1.1, 1.0);
+      transform: scale3d(1.1, 1.1, 1.0);
+    }
+    100% { 
+      -webkit-transform: scale3d(1, 1, 1.0);
+      transform: scale3d(1, 1, 1.0);
+    }
+} 
+@-webkit-keyframes zoomOut2 {
   0% {
   }
   100% {
@@ -718,7 +745,7 @@ figure.effect-lily:hover p {
 	transform: scale3d(0.9, 0.9, 1.0);
   }
 }
-@keyframes zoomOut {
+@keyframes zoomOut2 {
   0% {
   }
   100% {
@@ -906,6 +933,12 @@ button.close-small {
     overflow: hidden;
     padding: 0;
 }
+.owl-carousel .owl-wrapper-outer {
+    overflow: visible;
+}
+.owl-item:hover {
+    z-index: 50;
+}
 #fotoblock-2 .item, #fotoblock-3 .item, #fotoblock-6 .item {
     color: #fff;
     display: block;
@@ -973,7 +1006,12 @@ button.close-small {
 .owl-theme .owl-controls .owl-buttons div {
   position: absolute;
 }
-
+/*---------------*/
+/**** PhotoSwipe в галерее OWL ****/
+/*---------------*/
+.owl-item figure {
+    margin: 0;
+}
 /*---------------*/
 /**** Секции ****/
 /*---------------*/
@@ -1318,6 +1356,10 @@ left: -20px;
     padding: 0;
     width: 100%;
 }
+.contact-cont {
+    text-align: center;
+    background-color: #D3D3D3;
+}
 .contact-mail a {
     background-color: black;
     border-radius: 50px;
@@ -1328,7 +1370,7 @@ left: -20px;
     margin: 0 auto;
     text-transform: none;
     text-decoration: underline!important;
-    width: 240px;                                                                                                
+    width: 350px;                                                                                                
 }
 address div {
     padding: 10px 0;
@@ -1681,5 +1723,117 @@ input[type=search]::-webkit-input-placeholder {
 .input[type=search]:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
 .input[type=search]:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
 .input[type=search]:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+@font-face {
+    font-family: Altero;
+    src: url(shttps://rawcdn.githack.com/AlainBarrios/Fonts/c2f23223de197bbfd1adc66709be92f65c16b571/Altero-Regular.otf?raw=true);
+  }
+  
+  body {
+    /* make the body fits our viewport */
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-color: #1D1E22;
+  }
+  
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  #wrap-texture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #canvas {
+    /* make the canvas wrapper fits the document */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .plane {
+    /* define the size of your plane */
+    width: 50%;
+    height: 50vh;
+  }
+  
+  .plane img {
+    /* hide the img element */
+    display: none;
+  }
+  
+  .nav-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .nav-main ul {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 2rem;
+    justify-content: space-between;
+    text-align: center;
+  }
+  
+  .nav-main li {
+    display: grid;
+    grid-template-areas: "center";
+    font-family: Altero;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: #fff;
+  }
+  
+  .nav-main span {
+    grid-area: center;
+  }
+  
+  .nav-main .first-menu {
+    z-index: 10;
+  }
+  
+  .nav-main li:hover .second-menu {
+    transform: translate3d(0, 100%, 0);
+    opacity: 1;
+  }
+  
+  .nav-main .second-menu {
+    transition: transform 0.3s ease-out, opacity 1s ease-out;
+    opacity: 0;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+  }
+  
+  @media screen and (min-width: 600px) {
+    .nav-main ul {
+      width: 100%;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  @media screen and (min-width: 800px) {
+    .nav-main li {
+      font-size: 1.7rem;
+    }
+  }
+  
 
 
