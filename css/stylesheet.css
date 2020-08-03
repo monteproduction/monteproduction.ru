@@ -275,7 +275,7 @@ footer .klimov {
     top: 9px;
     padding-top: 32px;
 }
-.top-links > a, animate2 > a {
+.top-links > a, .animate2 > a {
     display: block;
 }
 .top-links a:hover {
@@ -707,8 +707,8 @@ figure.effect-lily:hover p {
 	will-change: transform, opacity;
 }
 .zoom-out-effect2 {
-	-webkit-animation-name: zoomOut;
-	animation-name: zoomOut;
+	-webkit-animation-name: zoomOut2;
+	animation-name: zoomOut2;
 	-webkit-animation-duration: 0.3s;
 	animation-duration: 0.3s;
 	-webkit-animation-fill-mode: both;
